@@ -1,5 +1,5 @@
 import CssBaseline from '@mui/material/CssBaseline'
-import NavBar from './components/NavBar'
+import NavBar from './components/Navbar'
 import Footer from './components/Footer'
 import Homepage from './Pages/Homepage'
 import Services from './Pages/Services'
@@ -8,7 +8,7 @@ import Contact from './Pages/Contact'
 import Portfolio from './Pages/Portfolio'
 import { Routes, Route } from 'react-router-dom'
 
-import TermsPage from './pages/TermsPage'
+import TermsPage from './Pages/TermsPage'
 import PrivacyPage from './pages/PrivacyPage'
 import ConfidentialityPage from './pages/ConfidentialityPage'
 import HelpPage from './pages/HelpPage'
@@ -19,15 +19,6 @@ import TrustSafetyPage from './pages/TrustSafetyPage'
 import QualityGuidePage from './pages/QualityGuidePage'
 import CareersPage from './pages/CareersPage' 
 import FAQPage from './Pages/FAQPage'
-
-
-
-
-
-
-
-
-
 
 function App() {
 
