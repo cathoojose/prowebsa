@@ -1,0 +1,33 @@
+:root {
+  font-family: Roboto, system-ui, -apple-system, Segoe UI, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.5;
+  font-weight: 400;
+  background-color: #f5f5f5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+main {
+  flex: 1; 
+
+}
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  margin: 0;
+  padding: 0;
+}
+
+

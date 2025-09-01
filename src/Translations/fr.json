@@ -1,0 +1,784 @@
+{
+    "navbar": {
+      "home": "Accueil",
+      "about": "À propos",
+      "contact": "Contact",
+      "portfolio": "Portfolio",
+      "services": "Services",
+      "web_design": "Conception Web",
+      "graphic_design": "Design Graphique",
+      "seo": "SEO",
+      "training": "Formation",
+      "web_management": "Gestion Web"
+    },
+
+
+    "footer": {
+      "for_clients": "Pour les Clients",
+      "how_it_works": "Comment Prowebsa Fonctionne",
+      "customer_success": "Réussite Client",
+      "stories": "Histoires",
+      "quality_guide": "Guide de Qualité",
+      "careers": "Carrières",
+      "quick_links": "Liens Rapides",
+      "home": "Accueil",
+      "about_us": "À propos de Nous",
+      "services": "Services",
+      "projects": "Projets",
+      "contact": "Contact",
+      "company": "Entreprise",
+      "help_support": "Aide & Support",
+      "terms": "Conditions d'utilisation",
+      "privacy": "Politique de Confidentialité",
+      "confidentiality": "Confidentialité",
+      "faqs": "FAQ",
+      "contact_info": "Informations de Contact",
+      "address": "Adresse : Puit blain #12, PV, Haïti",
+      "phone": "Téléphone : [+] XXX XXX",
+      "email": "Email :",
+      "follow_us": "Suivez-nous :",
+      "socials": "Facebook | LinkedIn | Instagram | Twitter",
+      "copyright": "Copyright © {{year}} Prowebsa. Tous droits réservés."
+    },
+
+
+      "homepage": {
+        "hero": {
+          "title": "Transformer vos idées en succès digital",
+          "subtitle": "Nous créons des sites web performants, des stratégies marketing engageantes et des solutions innovantes qui aident votre entreprise à prospérer à l’ère numérique.",
+          "learn_more": "En savoir plus",
+          "hire": "Recruter quelqu’un"
+        },
+        "services": {
+          "title": "Découvrez nos services",
+          "all": "Voir tous les services",
+          "web": { "title": "Développement Web", "desc": "Sites modernes, responsives et évolutifs adaptés à l’identité de votre marque." },
+          "marketing": { "title": "Marketing Digital", "desc": "Campagnes ciblées qui augmentent la visibilité, l’engagement et les conversions." },
+          "security": { "title": "Cybersécurité", "desc": "Protégez vos actifs numériques grâce à des solutions de sécurité avancées." }
+        },
+        "vision": {
+          "title": "Votre vision, portée par des talents mondiaux",
+          "lines": [
+            "Pourquoi limiter vos idées à un seul endroit ?",
+            "Le monde regorge d’innovateurs, de créateurs et de solutionneurs prêts à vous aider à bâtir quelque chose de remarquable."
+          ]
+        },
+        "blocks": [
+          {
+            "title": "Partagez votre projet",
+            "lines": ["Décrivez vos besoins", "qu’ils soient simples, audacieux ou révolutionnaires.", "Partagez votre vision", "et les bons esprits créatifs viendront vous aider à la concrétiser."]
+          },
+          {
+            "title": "Collaborez sans frontières",
+            "lines": ["Du design au développement, du marketing à la stratégie,", "notre réseau mondial vous connecte à des milliers de compétences et talents.", "Travaillez sans limites à travers les cultures et les fuseaux horaires."]
+          },
+          {
+            "title": "Travaillez en toute sérénité",
+            "lines": ["Gardez le contrôle à chaque étape : suivez l’avancement en temps réel,", "restez connecté avec votre équipe et libérez le paiement lorsque le travail correspond à vos attentes."]
+          },
+          {
+            "title": "Nous sommes à vos côtés",
+            "lines": ["Notre équipe est là pour vous guider, vous mettre en relation et vous soutenir", "afin que vous puissiez vous concentrer sur l’essentiel : réaliser votre projet."]
+          },
+          {
+            "title": "Créez l’avenir.",
+            "lines": ["Commencez dès maintenant"]
+          }
+        ],
+        "team": {
+          "title": "Notre équipe",
+          "0": { "name": "Daniel Kim", "role": "Analyste cybersécurité" },
+          "1": { "name": "Alex Morgan", "role": "Ingénieur réseau" },
+          "2": { "name": "Maya Patel", "role": "Consultante IT" },
+          "3": { "name": "Lucas Bennett", "role": "Développeur" }
+        },
+        "join": {
+          "title": "Des solutions freelance simplifiées.",
+          "subtitle": "Rejoignez-nous et libérez votre potentiel !",
+          "button": "Nous rejoindre"
+        }
+      },
+    
+    
+      
+        "about": {
+          "hero_title": "Notre Histoire",
+          "hero_subtitle": "Découvrez notre parcours, nos valeurs et l'équipe exceptionnelle derrière notre succès.",
+          "about_title": "Créer de la Valeur grâce à l'Innovation",
+          "about_text1": "PROWEBSA est un projet de startup numérique initié par l’Université Espoir de Calvary Chapel’s, visant à offrir des services technologiques innovants tant au niveau national qu’international.",
+          "about_text2": "Nous sommes spécialisés dans la création de sites web professionnels, d’applications mobiles, de services de cybersécurité, d’analyse de données et de solutions de conseil technologique adaptées à vos besoins.",
+          "about_text3": "En tant que passionnés de technologie, nous croyons en la construction de solutions ayant un impact social, économique et éducatif durable.",
+          "stats_years": "Années d'Expérience",
+          "stats_clients": "Clients dans le Monde",
+          "stats_projects": "Projets Réalisés",
+          "stats_team": "Membres de l'Équipe",
+          "values_title": "Nos Valeurs",
+          "value_innovation": "Innovation",
+          "value_innovation_desc": "Nous repoussons constamment les limites et explorons de nouvelles idées.",
+          "value_collaboration": "Collaboration",
+          "value_collaboration_desc": "Nous croyons que les meilleures solutions viennent du travail d'équipe.",
+          "value_excellence": "Excellence",
+          "value_excellence_desc": "Nous visons la plus haute qualité dans tout ce que nous faisons.",
+          "value_global": "Impact Mondial",
+          "value_global_desc": "Nous créons des solutions qui font une différence à l'échelle mondiale.",
+          "mission_title": "Mission & Vision",
+          "mission_our": "Notre Mission",
+          "mission_text": "\"Notre mission chez PROWEBSA est de concevoir et de fournir des solutions numériques innovantes et fiables qui répondent aux besoins uniques de nos clients, tout en contribuant au progrès social, économique et éducatif à long terme. Nous nous engageons à développer des services de pointe tels que la création de sites web, les applications mobiles, la cybersécurité, l’analyse de données et le conseil technologique.\"",
+          "vision_our": "Notre Vision",
+          "vision_text": "\"Notre vision est de devenir un pôle technologique de premier plan, reconnu tant au niveau national qu’international pour notre capacité à offrir des solutions numériques personnalisées et à forte valeur ajoutée. Nous nous efforçons de positionner PROWEBSA comme un partenaire de confiance alliant excellence technique et responsabilité sociale, en favorisant l’innovation, en soutenant le développement durable et en promouvant l’image d’une entreprise technologique moderne et fiable.\"",
+          "team_title": "Notre Équipe",
+          "cta_title": "Prêt à travailler avec nous?",
+          "cta_subtitle": "Contactez notre équipe dès aujourd'hui pour discuter de la façon dont nous pouvons vous aider à atteindre vos objectifs.",
+          "cta_button": "Contactez-nous"
+        },
+      
+        
+    
+      "servicesPage": {
+        "hero": {
+          "title": "Services",
+          "subtitle": "Découvrez notre gamme complète de services conçus pour dynamiser vos projets."
+        },
+        "sectionTitle": "Nos Services",
+        "cards": {
+          "webDev": {
+            "title": "Développement Web",
+            "desc": "Sites modernes, responsives et évolutifs adaptés à l'identité de votre marque."
+          },
+          "marketing": {
+            "title": "Marketing Digital",
+            "desc": "Campagnes ciblées qui augmentent la visibilité, l’engagement et les conversions."
+          },
+          "cybersecurity": {
+            "title": "Cybersécurité",
+            "desc": "Protégez vos actifs numériques grâce à des solutions de sécurité avancées."
+          },
+          "network": {
+            "title": "Solutions Réseau",
+            "desc": "Nous concevons, optimisons et maintenons vos réseaux pour assurer le bon fonctionnement de vos opérations."
+          },
+          "data": {
+            "title": "Analyse de Données",
+            "desc": "Transformez vos données brutes en insights clairs et exploitables pour de meilleures décisions."
+          },
+          "consulting": {
+            "title": "Consultation IT",
+            "desc": "Choisissez les bonnes technologies et stratégies pour faire avancer votre entreprise."
+          },
+          "insights": {
+            "title": "Analyses Business",
+            "desc": "Conseils d’experts alignés sur les tendances et opportunités mondiales."
+          },
+          "mobile": {
+            "title": "Développement Mobile",
+            "desc": "Applications mobiles rapides et engageantes pour iOS et Android."
+          },
+          "global": {
+            "title": "Présence Internationale",
+            "desc": "Solutions multilingues et multi-marchés pour élargir votre portée."
+          },
+          "button": "En savoir plus"
+        },
+        "cta": {
+          "title": "Faites partie d’une équipe qui transforme les idées en impact",
+          "subtitle": "Que vous soyez un client en quête d’innovation ou un professionnel prêt à partager votre expertise, nous créons des opportunités pour grandir, collaborer et réussir ensemble.",
+          "button": "Rejoignez-nous"
+        },
+        "faqs": {
+          "title": "FAQs",
+          "subtitle": "Répondez aux questions fréquentes en une phrase simple.",
+          "items": [
+            {
+              "q": "Quels services proposez-vous ?",
+              "a": "Nous proposons le développement web, le marketing, la cybersécurité, le réseau, l’analyse, le conseil et plus encore."
+            },
+            {
+              "q": "Comment commencer ?",
+              "a": "Contactez-nous avec les détails de votre projet et nous vous guiderons dans les prochaines étapes."
+            },
+            {
+              "q": "Combien coûtera mon projet ?",
+              "a": "Le prix dépend de l’ampleur et du délai. Nous fournirons un devis personnalisé après analyse de vos besoins."
+            }
+          ]
+        }
+      },
+
+      
+        "portfolio": {
+          "sections": {
+            "webDevelopment": "Développement Web",
+            "insightsTitle": "Avis des experts en logiciels",
+            "faqsTitle": "FAQs",
+            "faqAnswerPlaceholder": "Répondez à la question fréquemment posée en une phrase simple."
+          },
+          "categories": [
+            "Populaire",
+            "Conception Web",
+            "Design Graphique",
+            "SEO",
+            "Formation",
+            "Marketing",
+            "Consultation",
+            "Réseau"
+          ],
+          "portfolioItems": [
+            {
+              "title": "Universite Espoir de Calvary Chapel",
+              "desc": "UEspoir est une université chrétienne à but non lucratif fondée en 2015 par Calvary Chapel Port-au-Prince. Avec des programmes en affaires, informatique, éducation et formation professionnelle, l'université prépare les étudiants à servir leur communauté.",
+              "role": "Projet"
+            },
+            {
+              "title": "Calvary Chapel Port au Prince",
+              "desc": "Calvary Chapel Port-au-Prince est une église chrétienne reconnue pour son enseignement verset par verset de la Bible. Notre mission est de former des disciples pour le Christ et de les préparer à être disponibles pour toute bonne œuvre.",
+              "role": "Projet"
+            },
+            {
+              "title": "Lapawoli",
+              "desc": "Bienvenue à Lapawoli, où foi et créativité se rejoignent pour transformer des vies. À travers les médias, événements et publications, nous inspirons et rapprochons les cœurs de la parole de Dieu.",
+              "role": "Projet"
+            }
+          ],
+          "insights": [
+            { "name": "Alexandra M.", "quote": "Je commence toujours par cartographier les vulnérabilités possibles avant d’écrire une seule ligne de code." },
+            { "name": "James R.", "quote": "Je préfère React et Next.js pour les applications web : rendu rapide, composants réutilisables et expérience fluide." },
+            { "name": "Kevin T.", "quote": "Une bonne interface utilisateur est invisible. Les utilisateurs doivent ressentir le flux sans y penser." },
+            { "name": "Maya L.", "quote": "La cybersécurité n’est pas une configuration ponctuelle. C’est une culture de surveillance et d’adaptation constantes." },
+            { "name": "Samuel P.", "quote": "Lors du traitement de grandes données, je me concentre sur le nettoyage et la structuration avant l’analyse." },
+            { "name": "Tara V.", "quote": "Des données de qualité sont essentielles; sans elles, les insights sont inutiles." }
+          ],
+          "faqs": [
+            { "q": "Quels services offrez-vous ?", "a": "Nous offrons le développement web, le marketing, la cybersécurité, le réseautage, l’analytique, la consultation, et plus encore." },
+            { "q": "Comment commencer ?", "a": "Contactez-nous avec les détails de votre projet et nous vous guiderons pour les prochaines étapes." },
+            { "q": "Combien coûtera mon projet ?", "a": "Le prix dépend de l’envergure et du calendrier. Nous fournissons un devis personnalisé après analyse de vos besoins." }
+          ]
+        },
+      
+      
+      
+      
+      
+      
+        
+    "contact": {
+    "title": "Contact",
+    "info_title": "Informations de Contact",
+    "address_label": "Adresse",
+    "address": "Puit Blain 12, PV, Haïti",
+    "phone_label": "Téléphone",
+    "phone": "509 3344-3322",
+    "email_label": "Email",
+    "email": "Prowebsa@gmail.com",
+    "form_title": "Envoyez-nous un Message",
+    "form_description": "Si vous avez d'autres questions, nous sommes là pour vous — n'hésitez pas à nous contacter.",
+    "form_name": "Nom",
+    "form_enterprise": "Nom de l'entreprise",
+    "form_email": "Email",
+    "form_subject": "Sujet",
+    "form_message": "Message",
+    "form_submit": "Envoyer"
+    },
+
+    
+    
+      "careers": {
+        "breadcrumb": {
+          "home": "Accueil",
+          "current": "Carrières"
+        },
+        "title": "Carrières chez PROWEBSA",
+        "description": "Rejoignez notre équipe de professionnels passionnés par la technologie, dédiée à fournir des solutions numériques innovantes. Chez Prowebsa, nous croyons en la valorisation des talents, l'encouragement de l'innovation et la création d'un environnement où les grandes idées prospèrent.",
+        "why_work": "Pourquoi travailler chez Prowebsa ?",
+        "cards": {
+          "innovative_projects": {
+            "title": "Projets innovants",
+            "description": "Travaillez sur des projets de pointe dans divers secteurs en utilisant les dernières technologies."
+          },
+          "professional_growth": {
+            "title": "Développement professionnel",
+            "description": "Accédez à des formations, conférences et programmes de mentorat pour faire avancer votre carrière."
+          },
+          "collaborative_culture": {
+            "title": "Culture collaborative",
+            "description": "Rejoignez une équipe qui valorise la collaboration, le partage des connaissances et le soutien mutuel."
+          },
+          "competitive_benefits": {
+            "title": "Avantages compétitifs",
+            "description": "Profitez d'une rémunération compétitive, d'horaires flexibles et d'avantages complets."
+          }
+        },
+        "current_openings": "Postes disponibles",
+        "jobs": {
+          "frontend": {
+            "title": "Développeur Frontend Senior",
+            "description": "React, Vue.js, TypeScript | Temps plein | Télétravail",
+            "button": "Postuler"
+          },
+          "fullstack": {
+            "title": "Développeur Full Stack",
+            "description": "Node.js, Python, MongoDB | Temps plein | Hybride",
+            "button": "Postuler"
+          },
+          "ux_ui": {
+            "title": "Designer UX/UI",
+            "description": "Figma, Adobe Creative Suite | Temps plein | Sur site",
+            "button": "Postuler"
+          },
+          "devops": {
+            "title": "Ingénieur DevOps",
+            "description": "AWS, Docker, Kubernetes | Temps plein | Télétravail",
+            "button": "Postuler"
+          }
+        },
+        "general_application": {
+          "text": "Vous ne trouvez pas le poste idéal mais souhaitez rejoindre notre équipe ?",
+          "button": "Soumettre une candidature générale"
+        }
+      },
+      
+        "confidentiality": {
+          "breadcrumb": {
+            "home": "Accueil",
+            "policies": "Politiques",
+            "current": "Accord de confidentialité"
+          },
+          "title": "Accord de confidentialité",
+          "description": "PRowebsa respecte la nature sensible des informations clients et maintient des standards stricts de confidentialité.",
+          "sections": {
+            "non_disclosure": {
+              "title": "Non-divulgation",
+              "description": "Nous ne divulguerons aucune information confidentielle partagée durant notre collaboration à des tiers sans consentement explicite."
+            },
+            "information_protection": {
+              "title": "Protection des informations",
+              "description": "Nous mettons en place des mesures physiques, électroniques et procédurales pour protéger vos données confidentielles."
+            },
+            "employee_training": {
+              "title": "Formation des employés",
+              "description": "Tous les membres de l’équipe PRowebsa sont formés aux protocoles de confidentialité et signent des accords de non-divulgation."
+            }
+          },
+          "last_updated": "Dernière mise à jour"
+        },
+
+        
+          "customer_success": {
+            "breadcrumb": {
+              "home": "Accueil",
+              "current": "Succès client"
+            },
+            "title": "Succès client",
+            "description": "Chez PROWEBSA, votre succès est notre succès. Nous mesurons notre performance par les résultats que nous livrons à nos clients et les relations à long terme que nous construisons.",
+            "section_title": "Notre approche du succès client",
+            "cards": {
+              "account_management": {
+                "title": "Gestion de compte dédiée",
+                "description": "Chaque client reçoit un gestionnaire de compte dédié qui sert de point de contact unique tout au long de notre collaboration."
+              },
+              "progress_updates": {
+                "title": "Mises à jour régulières",
+                "description": "Nous fournissons des mises à jour transparentes et régulières sur l’avancement des projets, les défis et les étapes atteintes."
+              },
+              "strategic_guidance": {
+                "title": "Conseils stratégiques",
+                "description": "Au-delà de l’exécution technique, nous offrons des conseils stratégiques pour maximiser votre investissement numérique."
+              },
+              "post_launch_support": {
+                "title": "Support après lancement",
+                "description": "Notre relation se poursuit après le lancement avec un support complet et des services d’optimisation."
+              }
+            },
+            "footer_text": "Rejoignez notre liste croissante de clients satisfaits. Prenez contact pour commencer votre success story.",
+            "footer_link": "Prenez contact"
+          },
+
+          
+            "faq": {
+              "breadcrumb": {
+                "home": "Accueil",
+                "current": "FAQ"
+              },
+              "title": "Questions fréquentes",
+              "description": "Trouvez des réponses aux questions courantes sur nos services, processus et politiques. Si vous ne trouvez pas ce que vous cherchez, n'hésitez pas à nous contacter directement.",
+              "categories": [
+                {
+                  "title": "Questions générales",
+                  "questions": [
+                    {
+                      "question": "Quels services propose PROWEBSA ?",
+                      "answer": "Prowebsa propose une gamme complète de services numériques, y compris le développement web, le développement d'applications mobiles, les solutions de cybersécurité, la configuration et la gestion de réseaux, l'analyse de données et le conseil en informatique. Nous fournissons des solutions clé en main adaptées à vos besoins."
+                    },
+                    {
+                      "question": "Combien de temps dure un projet typique ?",
+                      "answer": "Les délais des projets varient selon la complexité et l'étendue. Un site simple peut prendre 2 à 4 semaines, tandis qu'une application personnalisée complexe peut prendre 3 à 6 mois. Lors de la consultation initiale, nous fournirons un calendrier détaillé basé sur vos besoins spécifiques."
+                    },
+                    {
+                      "question": "Travaillez-vous avec des startups ?",
+                      "answer": "Absolument ! Nous aimons travailler avec des startups et proposons des solutions évolutives qui grandissent avec votre entreprise. Nous pouvons également conseiller sur les choix technologiques adaptés à votre croissance et budget."
+                    }
+                  ]
+                },
+                {
+                  "title": "Processus de projet",
+                  "questions": [
+                    {
+                      "question": "Quel est votre processus de développement ?",
+                      "answer": "Notre processus suit ces étapes clés : 1) Découverte et consultation pour comprendre vos besoins, 2) Planification et stratégie, 3) Conception et prototypage, 4) Développement et mise en œuvre, 5) Tests et assurance qualité, 6) Déploiement et lancement, 7) Support et maintenance continus."
+                    },
+                    {
+                      "question": "Quel est mon degré d’implication pendant le projet ?",
+                      "answer": "Nous recommandons des points de contrôle et des retours réguliers tout au long du processus. Typiquement, nous organisons des réunions hebdomadaires et demandons des retours à des étapes clés. Plus vous êtes impliqué, mieux le produit final correspondra à votre vision."
+                    },
+                    {
+                      "question": "Puis-je apporter des modifications pendant le développement ?",
+                      "answer": "Oui, mais des changements importants après le début du développement peuvent impacter les délais et les coûts. Nous utilisons un processus de demande de changement pour évaluer l’impact et ajuster les paramètres du projet en conséquence."
+                    }
+                  ]
+                },
+                {
+                  "title": "Tarification et paiements",
+                  "questions": [
+                    {
+                      "question": "Quel est votre modèle de tarification ?",
+                      "answer": "Nous proposons des modèles flexibles incluant projets à prix fixe pour des périmètres bien définis, forfaits temps et matériaux pour des projets plus fluides, et abonnements mensuels pour support continu. Nous recommandons la meilleure approche selon le projet."
+                    },
+                    {
+                      "question": "Exigez-vous un acompte ?",
+                      "answer": "Oui, nous demandons généralement un acompte de 30 à 50 % pour commencer le travail, le solde étant dû à la fin du projet ou selon un calendrier de paiement par jalons pour les projets plus importants."
+                    },
+                    {
+                      "question": "Y a-t-il des coûts cachés ?",
+                      "answer": "Nous croyons en la transparence des coûts. Tous les frais seront détaillés dans votre proposition et tout frais supplémentaire sera discuté avant engagement. Nous obtenons votre accord avant tout travail hors périmètre initial."
+                    }
+                  ]
+                },
+                {
+                  "title": "Questions techniques",
+                  "questions": [
+                    {
+                      "question": "Avec quelles technologies travaillez-vous ?",
+                      "answer": "Nous travaillons avec de nombreuses technologies, y compris React, Angular, Vue.js, Node.js, Python, PHP, .NET, iOS Swift, Android Kotlin et diverses bases de données et plateformes cloud. Nous choisissons les technologies selon vos besoins, l’évolutivité et la maintenance à long terme."
+                    },
+                    {
+                      "question": "Fournissez-vous des services d’hébergement ?",
+                      "answer": "Oui, nous pouvons organiser des solutions d’hébergement adaptées à vos besoins. Nous collaborons avec des hébergeurs fiables et pouvons gérer votre environnement d’hébergement ou déployer sur votre hébergeur préféré."
+                    },
+                    {
+                      "question": "Mon site sera-t-il responsive ?",
+                      "answer": "Absolument. Tous nos projets web sont développés en mobile-first, garantissant performance et expérience utilisateur optimales sur tous les appareils et tailles d’écran."
+                    }
+                  ]
+                },
+                {
+                  "title": "Support et maintenance",
+                  "questions": [
+                    {
+                      "question": "Fournissez-vous des formations ?",
+                      "answer": "Oui, nous fournissons des formations complètes et de la documentation pour que vous puissiez gérer efficacement votre solution. Les formations sont adaptées aux compétences techniques de votre équipe et peuvent être en présentiel ou à distance."
+                    },
+                    {
+                      "question": "Que se passe-t-il après la fin de mon projet ?",
+                      "answer": "Nous proposons des forfaits de support et maintenance pour garantir que votre solution continue de fonctionner de manière optimale. Cela peut inclure mises à jour logicielles, surveillance sécurité, optimisation des performances et support technique."
+                    },
+                    {
+                      "question": "Comment demander du support après le projet ?",
+                      "answer": "Nos clients ont accès à un portail dédié où ils peuvent soumettre des tickets, demander de l’aide et suivre l’état de leurs demandes. Nous fournissons également un support d’urgence pour les problèmes critiques."
+                    }
+                  ]
+                }
+              ],
+              "footer_text": "Vous avez encore des questions ? Nous sommes là pour vous aider !",
+              "footer_button": "Contactez-nous"
+            },
+            
+              "help": {
+                "breadcrumb": {
+                  "home": "Accueil",
+                  "policies": "Politiques",
+                  "current": "Aide & Support"
+                },
+                "title": "Aide & Support",
+                "description": "Nous nous engageons à fournir un support exceptionnel tout au long de notre collaboration et au-delà.",
+                "sections": [
+                  {
+                    "title": "Canaux de support",
+                    "content": "Email : support@prowebsa.com\nTéléphone : [+1] XXX-XXX-XXXX\nHoraires : Lundi-Vendredi, 9h-18h EST"
+                  },
+                  {
+                    "title": "Délais de réponse",
+                    "content": "Nous nous efforçons de répondre à toutes les demandes sous 24 heures ouvrables. Un support d’urgence est disponible pour les problèmes critiques."
+                  },
+                  {
+                    "title": "Documentation",
+                    "content": "Une documentation complète est fournie pour tous les projets livrés, y compris les guides utilisateurs et les spécifications techniques."
+                  }
+                ],
+                "last_updated": "Dernière mise à jour"
+              },
+              
+                "howItWorks": {
+                  "breadcrumb": {
+                    "home": "Accueil",
+                    "current": "Comment fonctionne Prowebsa"
+                  },
+                  "title": "Comment fonctionne Prowebsa",
+                  "description": "Chez PROWEBSA, nous suivons un processus optimisé pour garantir le succès de votre projet, de la conception au déploiement.",
+                  "process": [
+                    {
+                      "step": "Découverte & Consultation",
+                      "detail": "Nous commençons par comprendre vos objectifs commerciaux, votre audience cible et les exigences du projet grâce à des consultations détaillées."
+                    },
+                    {
+                      "step": "Planification & Stratégie",
+                      "detail": "Notre équipe crée un plan de projet complet avec calendriers, jalons et recommandations technologiques."
+                    },
+                    {
+                      "step": "Conception & Prototypage",
+                      "detail": "Nous développons des maquettes et prototypes pour votre approbation avant de passer au développement."
+                    },
+                    {
+                      "step": "Développement",
+                      "detail": "Nos développeurs donnent vie à votre projet en utilisant les meilleures pratiques et technologies de pointe."
+                    },
+                    {
+                      "step": "Tests & Assurance Qualité",
+                      "detail": "Nous testons rigoureusement votre projet sur tous les appareils et navigateurs pour garantir des performances impeccables."
+                    },
+                    {
+                      "step": "Déploiement & Lancement",
+                      "detail": "Nous gérons le processus complet de déploiement et assurons un lancement sans accroc."
+                    },
+                    {
+                      "step": "Maintenance & Support",
+                      "detail": "Nous proposons des services de support et de maintenance continus pour garantir le bon fonctionnement de votre projet."
+                    }
+                  ],
+                  "footer_text": "Prêt à démarrer votre projet ? ",
+                  "footer_link": "Contactez-nous dès aujourd'hui"
+                },
+                
+                  "privacy": {
+                    "breadcrumb": {
+                      "home": "Accueil",
+                      "policies": "Politiques",
+                      "current": "Politique de confidentialité"
+                    },
+                    "title": "Politique de confidentialité",
+                    "description": "Chez PROWEBSA, nous respectons votre vie privée. Cette politique explique comment nous collectons, utilisons et protégeons vos informations.",
+                    "sections": [
+                      {
+                        "title": "Collecte d'informations",
+                        "content": "Nous collectons les informations que vous fournissez directement, y compris le nom, l'email, les informations sur l'entreprise et les exigences du projet."
+                      },
+                      {
+                        "title": "Utilisation des informations",
+                        "content": "Nous utilisons vos informations pour fournir nos services, communiquer les mises à jour et améliorer nos offres. Nous ne vendons pas vos données à des tiers."
+                      },
+                      {
+                        "title": "Sécurité des données",
+                        "content": "Nous mettons en œuvre des mesures de sécurité conformes aux standards de l'industrie pour protéger vos informations contre tout accès non autorisé."
+                      },
+
+                      {
+                        "title": "Non-divulgation",
+                        "content": "Nous ne divulguerons aucune information confidentielle partagée durant notre collaboration à des tiers sans consentement explicite."
+                      },
+                      {
+                        "title": "Protection des informations",
+                        "content": "Nous mettons en place des mesures physiques, électroniques et procédurales pour protéger vos données confidentielles."
+                      },
+                      {
+                        "title": "Formation des employés",
+                        "content": "Tous les membres de l’équipe Prowebsa sont formés aux protocoles de confidentialité et signent des accords de non-divulgation."
+                      },
+
+                      {
+                        "title": "Cookies",
+                        "content": "Notre site utilise des cookies pour améliorer l'expérience utilisateur et analyser le trafic. Vous pouvez gérer les cookies via les paramètres de votre navigateur."
+                      }
+                    ],
+                    "last_updated": "Dernière mise à jour"
+                  },
+                  
+                    "qualityGuide": {
+                      "breadcrumb": {
+                        "home": "Accueil",
+                        "current": "Guide de qualité"
+                      },
+                      "title": "Guide de qualité",
+                      "description": "Chez PROWEBSA, la qualité n'est pas seulement une étape de notre processus — elle est intégrée dans tout ce que nous faisons. Notre cadre complet d'assurance qualité garantit que nous livrons des solutions exceptionnelles qui dépassent les attentes.",
+                      "standardsTitle": "Nos standards de qualité",
+                      "standards": [
+                        {
+                          "primary": "Qualité du code",
+                          "secondary": "Nous suivons les meilleures pratiques de l'industrie, effectuons des revues de code par les pairs et maintenons une documentation complète."
+                        },
+                        {
+                          "primary": "Optimisation des performances",
+                          "secondary": "Nous optimisons la vitesse, la scalabilité et l'efficacité pour garantir que votre solution fonctionne parfaitement sous charge."
+                        },
+                        {
+                          "primary": "Compatibilité multi-plateforme",
+                          "secondary": "Nous garantissons que votre solution fonctionne parfaitement sur tous les appareils, navigateurs et systèmes d'exploitation."
+                        },
+                        {
+                          "primary": "Conformité à l'accessibilité",
+                          "secondary": "Nous respectons les directives WCAG pour rendre vos produits numériques accessibles à tous les utilisateurs."
+                        }
+                      ],
+                      "processTitle": "Notre processus d'assurance qualité",
+                      "process": [
+                        {
+                          "primary": "Analyse des exigences",
+                          "secondary": "Analyse approfondie des exigences du projet pour établir des critères de qualité clairs."
+                        },
+                        {
+                          "primary": "Planification des tests",
+                          "secondary": "Élaboration de plans de tests complets couvrant la fonctionnalité, la performance, la sécurité et l'utilisabilité."
+                        },
+                        {
+                          "primary": "Tests continus",
+                          "secondary": "Tests tout au long du cycle de développement, et pas seulement à la fin du projet."
+                        },
+                        {
+                          "primary": "Tests d'acceptation utilisateur",
+                          "secondary": "Impliquer les parties prenantes dans le processus de test pour garantir que la solution répond aux besoins métier."
+                        }
+                      ],
+                      "contactText": "Vous voulez en savoir plus sur nos processus de qualité ?",
+                      "contactLink": "Contactez notre équipe qualité"
+                    },
+                    
+                      "stories": {
+                        "breadcrumb": {
+                          "home": "Accueil",
+                          "current": "Histoires de succès"
+                        },
+                        "title": "Histoires de succès",
+                        "description": "Découvrez comment PROWEBSA a aidé des entreprises à transformer leur présence digitale et à atteindre leurs objectifs grâce à des solutions technologiques innovantes.",
+                        "storiesList": [
+                          {
+                            "title": "Révolution E-commerce",
+                            "description": "Comment nous avons aidé une marque de détail à augmenter ses ventes en ligne de 240 % grâce à une plateforme e-commerce et une application mobile sur mesure.",
+                            "button": "Lire l'histoire complète"
+                          },
+                          {
+                            "title": "Transformation du secteur de la santé",
+                            "description": "Développement d’un portail patient sécurisé et d’une solution de télésanté pour un prestataire de soins desservant plus de 50 000 patients.",
+                            "button": "Lire l'histoire complète"
+                          },
+                          {
+                            "title": "Innovation FinTech",
+                            "description": "Création d’une plateforme d’analyse financière de pointe pour une startup ayant obtenu un financement de série A de 5 M$.",
+                            "button": "Lire l'histoire complète"
+                          },
+                          {
+                            "title": "Plateforme éducative",
+                            "description": "Création d’un système de gestion de l’apprentissage évolutif pour un établissement éducatif desservant plus de 10 000 étudiants.",
+                            "button": "Lire l'histoire complète"
+                          }
+                        ],
+                        "ctaText": "Voulez-vous être notre prochaine histoire de succès ?",
+                        "ctaButton": "Démarrez votre projet"
+                      },
+                      
+                        "terms": {
+                          "breadcrumb": {
+                            "home": "Accueil",
+                            "policies": "Politiques",
+                            "current": "Conditions d'utilisation"
+                          },
+                          "title": "Conditions d'utilisation",
+                          "sections": [
+                            {
+                              "title": "1. Introduction",
+                              "content": "PROWEBSA (\"nous,\" \"notre\") fournit des services de développement web, applications mobiles, cybersécurité et conseil en informatique. Ces Conditions régissent votre utilisation de nos services."
+                            },
+                            {
+                              "title": "2. Services",
+                              "content": "Nous fournirons les services tels que détaillés dans nos propositions et déclarations de travail. La portée, le calendrier et les livrables seront précisés dans la documentation du projet."
+                            },
+                            {
+                              "title": "3. Responsabilités du client",
+                              "content": "Les clients doivent fournir les matériaux, informations et retours nécessaires en temps voulu. Les retards peuvent affecter les délais et coûts du projet."
+                            },
+                            {
+                              "title": "4. Conditions de paiement",
+                              "content": "Les calendriers de paiement seront indiqués dans les propositions de projet. Les paiements en retard peuvent entraîner des frais et la suspension des services."
+                            },
+                            {
+                              "title": "5. Propriété intellectuelle",
+                              "content": "Après paiement complet, les clients reçoivent la propriété des travaux développés sur mesure. Prowebsa conserve les droits sur les outils et frameworks préexistants."
+                            },
+                            {
+                              "title": "6. Limitation de responsabilité",
+                              "content": "Notre responsabilité est limitée au montant payé pour les services. Nous ne sommes pas responsables des dommages indirects ou consécutifs."
+                            }
+                          ],
+                          "lastUpdated": "Dernière mise à jour : "
+                        },
+                        
+                          "trustSafety": {
+                            "breadcrumb": {
+                              "home": "Accueil",
+                              "current": "Confiance et Sécurité"
+                            },
+                            "title": "Confiance et Sécurité",
+                            "intro": "Chez PROWEBSA, nous priorisons la sécurité et l'intégrité des données et actifs numériques de nos clients. Nos protocoles complets de confiance et sécurité garantissent votre tranquillité d'esprit tout au long de notre collaboration.",
+                            "securityMeasuresTitle": "Nos mesures de sécurité",
+                            "securityMeasures": [
+                              {
+                                "icon": "SecurityIcon",
+                                "primary": "Chiffrement des données",
+                                "secondary": "Toutes les données sensibles sont chiffrées en transit et au repos selon les protocoles standards du secteur."
+                              },
+                              {
+                                "icon": "LockIcon",
+                                "primary": "Pratiques de développement sécurisées",
+                                "secondary": "Nous suivons les directives OWASP et effectuons des audits réguliers de sécurité tout au long du cycle de développement."
+                              },
+                              {
+                                "icon": "VerifiedUserIcon",
+                                "primary": "Normes de conformité",
+                                "secondary": "Nos processus sont conformes au RGPD, HIPAA et autres cadres de conformité pertinents selon les exigences du projet."
+                              }
+                            ],
+                            "commitmentTitle": "Notre engagement envers vous",
+                            "commitmentIntro": "Nous comprenons que la confiance se gagne par des performances constantes et la transparence. C'est pourquoi nous :",
+                            "commitmentItems": [
+                              "Maintenons des canaux de communication clairs tout au long de notre collaboration",
+                              "Fournissons des mises à jour régulières et des démonstrations",
+                              "Offrons des tarifs transparents sans frais cachés",
+                              "Signons des accords de confidentialité complets avant le démarrage du projet",
+                              "Souscrivons une assurance responsabilité professionnelle pour protéger votre investissement"
+                            ],
+                            "contactText": "Vous avez des exigences spécifiques en matière de sécurité ?",
+                            "contactLink": "Contactez notre équipe de sécurité"
+                          }
+                        
+                        
+                      
+                      
+                    
+                    
+                  
+                  
+                
+                
+              
+              
+            
+            
+          
+          
+        
+        
+      
+      
+    
+    
+    
+      
+      
+}
+  

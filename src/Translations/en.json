@@ -1,0 +1,767 @@
+{
+    "navbar": {
+      "home": "Home",
+      "about": "About",
+      "contact": "Contact",
+      "portfolio": "Portfolio",
+      "services": "Services",
+      "web_design": "Web Design",
+      "graphic_design": "Graphic Design",
+      "seo": "SEO",
+      "training": "Training",
+      "web_management": "Web Management"
+    },
+    "footer": {
+      "for_clients": "For Clients",
+      "how_it_works": "How Prowebsa Works",
+      "customer_success": "Customer Success",
+      "stories": "Stories",
+      "quality_guide": "Quality Guide",
+      "careers": "Careers",
+      "quick_links": "Quick Links",
+      "home": "Home",
+      "about_us": "About Us",
+      "services": "Services",
+      "projects": "Projects",
+      "contact": "Contact",
+      "company": "Company",
+      "help_support": "Help & Support",
+      "terms": "Terms of Service",
+      "privacy": "Privacy Policy",
+      "confidentiality": "Confidentiality",
+      "faqs": "FAQS",
+      "contact_info": "Contact Info",
+      "address": "Address: Puit blain #12, PV, Haiti",
+      "phone": "Phone: [+] XXX XXX",
+      "email": "Email:",
+      "follow_us": "Follow us:",
+      "socials": "Facebook | LinkedIn | Instagram | Twitter",
+      "copyright": "Copyright © {{year}} Prowebsa. All rights reserved."
+    },
+
+      "homepage": {
+        "hero": {
+          "title": "Transforming Ideas into Digital Success",
+          "subtitle": "We craft powerful websites, engaging marketing strategies, and innovative solutions that help your business thrive in the digital age.",
+          "learn_more": "Learn More",
+          "hire": "Hire someone"
+        },
+        "services": {
+          "title": "Explore Our Services",
+          "all": "See All Services",
+          "web": { "title": "Web Development", "desc": "Modern, responsive, and scalable websites tailored to your brand identity." },
+          "marketing": { "title": "Digital Marketing", "desc": "Targeted campaigns that increase visibility, engagement, and conversions." },
+          "security": { "title": "Cybersecurity", "desc": "Protect your digital assets with advanced security solutions." }
+        },
+        "vision": {
+          "title": "Your Vision, Powered by Global Talent",
+          "lines": [
+            "Why limit your ideas to one location?",
+            "The world is full of innovators, creators, and problem-solvers ready to help you build something remarkable."
+          ]
+        },
+        "blocks": [
+          {
+            "title": "Share Your Project",
+            "lines": ["Describe what you need", "whether it’s something simple, bold, or groundbreaking.", "Share your vision", "and the right creative minds and professionals will find you to bring it to life."]
+          },
+          {
+            "title": "Collaborate Without Borders",
+            "lines": ["From design to development, marketing to strategy,", "our global network connects you with thousands of skills and talents.", "Work seamlessly across cultures and time zones, without limits."]
+          },
+          {
+            "title": "Work with Peace of Mind",
+            "lines": ["Stay in control at every step: track progress in real time,", "stay connected with your team, and release payment when the work meets your expectations."]
+          },
+          {
+            "title": "We’ve Got Your Back",
+            "lines": ["Our team is here to guide, match, and support you", "so you can focus on what matters: making it happen."]
+          },
+          {
+            "title": "Create the future.",
+            "lines": ["Get started now"]
+          }
+        ],
+        "team": {
+          "title": "Our Team",
+          "0": { "name": "Daniel Kim", "role": "Cybersecurity Analyst" },
+          "1": { "name": "Alex Morgan", "role": "Network Engineer" },
+          "2": { "name": "Maya Patel", "role": "IT Consultant" },
+          "3": { "name": "Lucas Bennett", "role": "Developer" }
+        },
+        "join": {
+          "title": "Freelance solutions made easy.",
+          "subtitle": "Join us and unlock your potential!",
+          "button": "Join Us"
+        }
+      },
+    
+
+    
+      
+        "about": {
+          "hero_title": "Our Story",
+          "hero_subtitle": "Learn about our journey, values, and the amazing team behind our success.",
+          "about_title": "Creating Value Through Innovation",
+          "about_text1": "PROWEBSA is a digital startup project initiated by Universite of Calvary Chapel', aiming to offer innovative technology services both nationally and internationally",
+          "about_text2": "We specialize in creating professional websites, mobile applications, cybersecurity services, data analysis, and technology consulting solutions tailored to your needs.",
+          "about_text3": "As passionate tech professionals, we believe in building solutions that have a lasting social, economic, and educational impact.",
+          "stats_years": "Years Experience",
+          "stats_clients": "Clients Worldwide",
+          "stats_projects": "Projects Completed",
+          "stats_team": "Team Members",
+          "values_title": "Our Values",
+          "value_innovation": "Innovation",
+          "value_innovation_desc": "We constantly push boundaries and explore new ideas.",
+          "value_collaboration": "Collaboration",
+          "value_collaboration_desc": "We believe the best solutions come from working together.",
+          "value_excellence": "Excellence",
+          "value_excellence_desc": "We strive for the highest quality in everything we do.",
+          "value_global": "Global Impact",
+          "value_global_desc": "We create solutions that make a difference worldwide.",
+          "mission_title": "Mission & Vision",
+          "mission_our": "Our Mission",
+          "mission_text": "\" Our mission at PROWEBSA is to design and deliver innovative and reliable digital solutions that address the unique needs of our clients while contributing to long-term social, economic, and educational progress. We are committed to developing cutting-edge services such as website creation, mobile applications, cybersecurity, data analysis, and technology consulting.\"",
+          "vision_our": "Our Vision",
+          "vision_text": "\" Our vision is to become a leading technology hub, recognized both nationally and internationally for our ability to provide tailored digital solutions with high added value. We strive to position PROWEBSA as a trusted partner that combines technical excellence with social responsibility, fostering innovation, supporting sustainable development, and promoting the image of a modern and reliable technology company.\"",
+          "team_title": "Our Team",
+          "cta_title": "Ready to work with us?",
+          "cta_subtitle": "Get in touch with our team today to discuss how we can help you achieve your goals.",
+          "cta_button": "Contact Us"
+        },
+      
+
+
+    
+      "servicesPage": {
+        "hero": {
+          "title": "Services",
+          "subtitle": "Explore our full range of services designed to boost your projects."
+        },
+        "sectionTitle": "Our Services",
+        "cards": {
+          "webDev": {
+            "title": "Web Development",
+            "desc": "Modern, responsive, and scalable websites tailored to your brand identity."
+          },
+          "marketing": {
+            "title": "Digital Marketing",
+            "desc": "Targeted campaigns that increase visibility, engagement, and conversions."
+          },
+          "cybersecurity": {
+            "title": "Cybersecurity",
+            "desc": "Protect your digital assets with advanced security solutions."
+          },
+          "network": {
+            "title": "Network Solutions",
+            "desc": "We design, optimize, and maintain networks to keep your operations running smoothly."
+          },
+          "data": {
+            "title": "Data Analysis",
+            "desc": "Turn raw data into clear, actionable insights for better decisions."
+          },
+          "consulting": {
+            "title": "IT Consultation",
+            "desc": "Choose the right technology and strategies to drive your business forward."
+          },
+          "insights": {
+            "title": "Business Insights",
+            "desc": "Expert advice aligned with global trends and opportunities."
+          },
+          "mobile": {
+            "title": "Mobile App Development",
+            "desc": "Fast, engaging mobile applications for iOS and Android."
+          },
+          "global": {
+            "title": "Global Presence",
+            "desc": "Multilingual and multi-market solutions to expand your reach."
+          },
+          "button": "Learn more"
+        },
+        "cta": {
+          "title": "Be part of a team that turns ideas into impact",
+          "subtitle": "Whether you’re a client seeking innovation or a professional ready to share your expertise, we create opportunities to grow, collaborate, and succeed together.",
+          "button": "Join Us"
+        },
+        "faqs": {
+          "title": "FAQs",
+          "subtitle": "Answer the frequently asked question in a simple sentence.",
+          "items": [
+            {
+              "q": "What services do you offer?",
+              "a": "We offer web development, marketing, cybersecurity, networking, analytics, consulting, and more."
+            },
+            {
+              "q": "How do I get started?",
+              "a": "Contact us with your project details and we will guide you through the next steps."
+            },
+            {
+              "q": "How much will my project cost?",
+              "a": "Pricing depends on scope and timeline. We will provide a tailored quote after understanding your needs."
+            }
+          ]
+        }
+      },
+
+      
+
+        "contact": {
+          "title": "Contact",
+          "info_title": "Contact Information",
+          "address_label": "Address",
+          "address": "Puit Blain 12, PV, Haiti",
+          "phone_label": "Phone",
+          "phone": "509 3344-3322",
+          "email_label": "Email",
+          "email": "Prowebsa@gmail.com",
+          "form_title": "Send Us a Message",
+          "form_description": "If you have any other questions, we’re here for you — feel free to contact us.",
+          "form_name": "Name",
+          "form_enterprise": "Enterprise name",
+          "form_email": "Email",
+          "form_subject": "Subject",
+          "form_message": "Message",
+          "form_submit": "Submit"
+          },
+
+
+
+          
+      
+      
+        "portfolio": {
+          "sections": {
+            "webDevelopment": "Web Development",
+            "insightsTitle": "Insights from Top Software Experts",
+            "faqsTitle": "FAQs",
+            "faqAnswerPlaceholder": "Answer the frequently asked question in a simple sentence."
+          },
+          "categories": [
+            "Popular",
+            "Web design",
+            "Graphic design",
+            "SEO",
+            "Training",
+            "Marketing",
+            "Consultation",
+            "Network"
+          ],
+          "portfolioItems": [
+            {
+              "title": "Universite Espoir de Calvary Chapel",
+              "desc": "UEspoir is a non-profit Christian university founded in 2015 by Calvary Chapel Port-au-Prince, With programs in Business, Computer Science, Education, and professional training, the university equips students with knowledge, skills, and values to thrive and serve their communities.",
+              "role": "Project"
+            },
+            {
+              "title": "Calvary Chapel Port au Prince",
+              "desc": "Calvary Chapel Port-au-Prince is a Christian church distinguished by verse-by-verse teaching of God’s Word. Our mission is to make disciples for Christ and prepare them to be available for every good work through the guidance of the Holy Spirit.",
+              "role": "Project"
+            },
+            {
+              "title": "Lapawoli",
+              "desc": "Welcome to Lapawoli, where faith and creativity come together to transform lives. Through media, events, and publications, we aim to inspire, uplift, and bring hearts closer to God’s Word.",
+              "role": "Project"
+            }
+          ],
+          "insights": [
+            { "name": "Alexandra M.", "quote": "I always start by mapping possible vulnerabilities before writing a single line of code." },
+            { "name": "James R.", "quote": "I prefer React and Next.js for web apps: fast rendering, reusable components, and smooth user experiences." },
+            { "name": "Kevin T.", "quote": "Good UI is invisible. Users should feel the flow without thinking about it." },
+            { "name": "Maya L.", "quote": "Cybersecurity is not a one-time setup. It’s a culture of constant monitoring, testing, and adapting to new threats." },
+            { "name": "Samuel P.", "quote": "When handling big data, I focus on cleaning and structuring it before running analytics." },
+            { "name": "Tara V.", "quote": "Quality data is essential; insights are meaningless without it." }
+          ],
+          "faqs": [
+            { "q": "What services do you offer?", "a": "We offer web development, marketing, cybersecurity, networking, analytics, consulting, and more." },
+            { "q": "How do I get started?", "a": "Contact us with your project details and we will guide you through the next steps." },
+            { "q": "How much will my project cost?", "a": "Pricing depends on scope and timeline. We provide a tailored quote after understanding your needs." }
+          ]
+        },
+
+            "careers": {
+              "breadcrumb": {
+                "home": "Home",
+                "current": "Careers"
+              },
+              "title": "Careers at PRowebsa",
+              "description": "Join our team of passionate tech professionals dedicated to delivering innovative digital solutions. At PRowebsa, we believe in fostering talent, encouraging innovation, and creating an environment where great ideas thrive.",
+              "why_work": "Why Work at PRowebsa?",
+              "cards": {
+                "innovative_projects": {
+                  "title": "Innovative Projects",
+                  "description": "Work on cutting-edge projects across various industries using the latest technologies."
+                },
+                "professional_growth": {
+                  "title": "Professional Growth",
+                  "description": "Access to training, conferences, and mentorship programs to advance your career."
+                },
+                "collaborative_culture": {
+                  "title": "Collaborative Culture",
+                  "description": "Join a team that values collaboration, knowledge sharing, and mutual support."
+                },
+                "competitive_benefits": {
+                  "title": "Competitive Benefits",
+                  "description": "Enjoy competitive compensation, flexible work arrangements, and comprehensive benefits."
+                }
+              },
+              "current_openings": "Current Openings",
+              "jobs": {
+                "frontend": {
+                  "title": "Senior Frontend Developer",
+                  "description": "React, Vue.js, TypeScript | Full-time | Remote",
+                  "button": "Apply Now"
+                },
+                "fullstack": {
+                  "title": "Full Stack Developer",
+                  "description": "Node.js, Python, MongoDB | Full-time | Hybrid",
+                  "button": "Apply Now"
+                },
+                "ux_ui": {
+                  "title": "UX/UI Designer",
+                  "description": "Figma, Adobe Creative Suite | Full-time | On-site",
+                  "button": "Apply Now"
+                },
+                "devops": {
+                  "title": "DevOps Engineer",
+                  "description": "AWS, Docker, Kubernetes | Full-time | Remote",
+                  "button": "Apply Now"
+                }
+              },
+              "general_application": {
+                "text": "Don't see your perfect role but interested in joining our team?",
+                "button": "Submit General Application"
+              }
+            },
+
+            
+              "confidentiality": {
+                "breadcrumb": {
+                  "home": "Home",
+                  "policies": "Policies",
+                  "current": "Confidentiality Agreement"
+                },
+                "title": "Confidentiality Agreement",
+                "description": "PRowebsa respects the sensitive nature of client information and maintains strict confidentiality standards.",
+                "sections": {
+                  "non_disclosure": {
+                    "title": "Non-Disclosure",
+                    "description": "We will not disclose any confidential information shared during our engagement to third parties without explicit consent."
+                  },
+                  "information_protection": {
+                    "title": "Information Protection",
+                    "description": "We implement physical, electronic, and procedural safeguards to protect your confidential data."
+                  },
+                  "employee_training": {
+                    "title": "Employee Training",
+                    "description": "All PRowebsa team members are trained on confidentiality protocols and sign non-disclosure agreements."
+                  }
+                },
+                "last_updated": "Last updated"
+              },
+              
+                "customer_success": {
+                  "breadcrumb": {
+                    "home": "Home",
+                    "current": "Customer Success"
+                  },
+                  "title": "Customer Success",
+                  "description": "At PRowebsa, your success is our success. We measure our performance by the results we deliver to our clients and the long-term relationships we build.",
+                  "section_title": "Our Approach to Customer Success",
+                  "cards": {
+                    "account_management": {
+                      "title": "Dedicated Account Management",
+                      "description": "Each client receives a dedicated account manager who serves as your single point of contact throughout our engagement."
+                    },
+                    "progress_updates": {
+                      "title": "Regular Progress Updates",
+                      "description": "We provide transparent, regular updates on project progress, challenges, and milestones achieved."
+                    },
+                    "strategic_guidance": {
+                      "title": "Strategic Guidance",
+                      "description": "Beyond technical execution, we offer strategic guidance to help you maximize your digital investment."
+                    },
+                    "post_launch_support": {
+                      "title": "Post-Launch Support",
+                      "description": "Our relationship continues after launch with comprehensive support and optimization services."
+                    }
+                  },
+                  "footer_text": "Join our growing list of satisfied clients. Get in touch to start your success story.",
+                  "footer_link": "Get in touch"
+                },
+
+                
+                  "faq": {
+                    "breadcrumb": {
+                      "home": "Home",
+                      "current": "FAQs"
+                    },
+                    "title": "Frequently Asked Questions",
+                    "description": "Find answers to common questions about our services, processes, and policies. If you don't find what you're looking for, please don't hesitate to contact us directly.",
+                    "categories": [
+                      {
+                        "title": "General Questions",
+                        "questions": [
+                          {
+                            "question": "What services does PRowebsa offer?",
+                            "answer": "PRowebsa offers a comprehensive range of digital services including web development, mobile app development, cybersecurity solutions, network setup and management, data analysis, and IT consulting. We provide end-to-end solutions tailored to your business needs."
+                          },
+                          {
+                            "question": "How long does a typical project take?",
+                            "answer": "Project timelines vary based on complexity and scope. A simple website might take 2-4 weeks, while a complex custom application could take 3-6 months. During our initial consultation, we'll provide a detailed timeline based on your specific requirements."
+                          },
+                          {
+                            "question": "Do you work with startups?",
+                            "answer": "Absolutely! We enjoy working with startups and offer scalable solutions that grow with your business. We can also provide guidance on technology choices that align with your growth trajectory and budget."
+                          }
+                        ]
+                      },
+                      {
+                        "title": "Project Process",
+                        "questions": [
+                          {
+                            "question": "What is your development process?",
+                            "answer": "Our process follows these key stages: 1) Discovery and consultation to understand your needs, 2) Planning and strategy development, 3) Design and prototyping, 4) Development and implementation, 5) Testing and quality assurance, 6) Deployment and launch, and 7) Ongoing support and maintenance."
+                          },
+                          {
+                            "question": "How involved do I need to be during the project?",
+                            "answer": "We recommend regular check-ins and feedback throughout the process. Typically, we schedule weekly update meetings and require client feedback at key milestones. The more engaged you are, the better the final product will align with your vision."
+                          },
+                          {
+                            "question": "Can I make changes during the development process?",
+                            "answer": "Yes, but significant changes after development has started may impact timelines and costs. We use a change request process to evaluate the impact of modifications and adjust project parameters accordingly."
+                          }
+                        ]
+                      },
+                      {
+                        "title": "Pricing & Payments",
+                        "questions": [
+                          {
+                            "question": "What is your pricing model?",
+                            "answer": "We offer flexible pricing models including fixed-price projects for well-defined scopes, time-and-materials for more fluid projects, and monthly retainers for ongoing support and maintenance. We'll recommend the best approach based on your project's characteristics."
+                          },
+                          {
+                            "question": "Do you require a deposit?",
+                            "answer": "Yes, we typically require a 30-50% deposit to begin work, with the balance due upon project completion or according to a milestone payment schedule for larger projects."
+                          },
+                          {
+                            "question": "Are there any hidden costs?",
+                            "answer": "We believe in transparent pricing. All costs will be outlined in your proposal, and we'll discuss any potential additional expenses before they're incurred. We'll also obtain your approval before proceeding with any work that falls outside the original scope."
+                          }
+                        ]
+                      },
+                      {
+                        "title": "Technical Questions",
+                        "questions": [
+                          {
+                            "question": "What technologies do you work with?",
+                            "answer": "We work with a wide range of technologies including React, Angular, Vue.js, Node.js, Python, PHP, .NET, iOS Swift, Android Kotlin, and various databases and cloud platforms. We choose technologies based on your project requirements, scalability needs, and long-term maintenance considerations."
+                          },
+                          {
+                            "question": "Do you provide hosting services?",
+                            "answer": "Yes, we can arrange hosting solutions tailored to your needs. We partner with reliable hosting providers and can manage your hosting environment, or we can deploy to your preferred hosting provider."
+                          },
+                          {
+                            "question": "Will my website be mobile-responsive?",
+                            "answer": "Absolutely. All our web projects are developed with a mobile-first approach, ensuring optimal performance and user experience across all devices and screen sizes."
+                          }
+                        ]
+                      },
+                      {
+                        "title": "Support & Maintenance",
+                        "questions": [
+                          {
+                            "question": "Do you provide training?",
+                            "answer": "Yes, we provide comprehensive training and documentation to ensure you can manage your solution effectively. Training sessions are tailored to your team's technical proficiency and can be conducted in-person or remotely."
+                          },
+                          {
+                            "question": "What happens after my project is completed?",
+                            "answer": "We offer ongoing support and maintenance packages to ensure your solution continues to perform optimally. These can include software updates, security monitoring, performance optimization, and technical support."
+                          },
+                          {
+                            "question": "How do I request support after project completion?",
+                            "answer": "Our clients receive access to a dedicated support portal where they can submit tickets, request assistance, and track the status of their requests. We also provide emergency support for critical issues."
+                          }
+                        ]
+                      }
+                    ],
+                    "footer_text": "Still have questions? We're here to help!",
+                    "footer_button": "Contact Us"
+                  },
+
+                  
+                    "help": {
+                      "breadcrumb": {
+                        "home": "Home",
+                        "policies": "Policies",
+                        "current": "Help & Support"
+                      },
+                      "title": "Help & Support",
+                      "description": "We're committed to providing exceptional support throughout our engagement and beyond.",
+                      "sections": [
+                        {
+                          "title": "Support Channels",
+                          "content": "Email: support@prowebsa.com\nPhone: [+1] XXX-XXX-XXXX\nHours: Monday-Friday, 9am-6pm EST"
+                        },
+                        {
+                          "title": "Response Times",
+                          "content": "We aim to respond to all inquiries within 24 business hours. Emergency support is available for critical issues."
+                        },
+                        {
+                          "title": "Documentation",
+                          "content": "Comprehensive documentation is provided for all delivered projects, including user guides and technical specifications."
+                        }
+                      ],
+                      "last_updated": "Last updated"
+                    },
+                    
+                      "howItWorks": {
+                        "breadcrumb": {
+                          "home": "Home",
+                          "current": "How Prowebsa Works"
+                        },
+                        "title": "How Prowebsa Works",
+                        "description": "At PRowebsa, we follow a streamlined process to ensure your project's success from conception to deployment and beyond.",
+                        "process": [
+                          {
+                            "step": "Discovery & Consultation",
+                            "detail": "We begin by understanding your business goals, target audience, and project requirements through detailed consultations."
+                          },
+                          {
+                            "step": "Planning & Strategy",
+                            "detail": "Our team creates a comprehensive project plan with timelines, milestones, and technology stack recommendations."
+                          },
+                          {
+                            "step": "Design & Prototyping",
+                            "detail": "We develop wireframes and prototypes for your approval before moving to development."
+                          },
+                          {
+                            "step": "Development",
+                            "detail": "Our developers bring your project to life using industry best practices and cutting-edge technologies."
+                          },
+                          {
+                            "step": "Testing & Quality Assurance",
+                            "detail": "We rigorously test your project across devices and browsers to ensure flawless performance."
+                          },
+                          {
+                            "step": "Deployment & Launch",
+                            "detail": "We handle the complete deployment process and ensure a smooth launch."
+                          },
+                          {
+                            "step": "Maintenance & Support",
+                            "detail": "We offer ongoing support and maintenance packages to keep your project running optimally."
+                          }
+                        ],
+                        "footer_text": "Ready to start your project? ",
+                        "footer_link": "Contact us today"
+                      },
+                      
+                        "privacy": {
+                          "breadcrumb": {
+                            "home": "Home",
+                            "policies": "Policies",
+                            "current": "Privacy Policy"
+                          },
+                          "title": "Privacy Policy",
+                          "description": "At PRowebsa, we value your privacy. This policy explains how we collect, use, and protect your information.",
+                          "sections": [
+                            {
+                              "title": "Information Collection",
+                              "content": "We collect information you provide directly, including name, email, company details, and project requirements."
+                            },
+                            {
+                              "title": "Use of Information",
+                              "content": "We use your information to provide services, communicate updates, and improve our offerings. We do not sell your data to third parties."
+                            },
+                            {
+                              "title": "Data Security",
+                              "content": "We implement industry-standard security measures to protect your information from unauthorized access."
+                            },
+                            {
+                              "title": "Cookies",
+                              "content": "Our website uses cookies to enhance user experience and analyze site traffic. You can control cookies through your browser settings."
+                            }
+                          ],
+                          "last_updated": "Last updated"
+                        },
+                        
+                          "qualityGuide": {
+                            "breadcrumb": {
+                              "home": "Home",
+                              "current": "Quality Guide"
+                            },
+                            "title": "Quality Guide",
+                            "description": "At PRowebsa, quality isn't just a step in our process—it's embedded in everything we do. Our comprehensive quality assurance framework ensures that we deliver exceptional solutions that exceed expectations.",
+                            "standardsTitle": "Our Quality Standards",
+                            "standards": [
+                              {
+                                "primary": "Code Quality",
+                                "secondary": "We follow industry best practices, conduct peer code reviews, and maintain comprehensive documentation."
+                              },
+                              {
+                                "primary": "Performance Optimization",
+                                "secondary": "We optimize for speed, scalability, and efficiency to ensure your solution performs flawlessly under load."
+                              },
+                              {
+                                "primary": "Cross-Platform Compatibility",
+                                "secondary": "We ensure your solution works seamlessly across devices, browsers, and operating systems."
+                              },
+                              {
+                                "primary": "Accessibility Compliance",
+                                "secondary": "We adhere to WCAG guidelines to make your digital products accessible to all users."
+                              }
+                            ],
+                            "processTitle": "Our Quality Assurance Process",
+                            "process": [
+                              {
+                                "primary": "Requirements Analysis",
+                                "secondary": "Thorough analysis of project requirements to establish clear quality benchmarks."
+                              },
+                              {
+                                "primary": "Test Planning",
+                                "secondary": "Development of comprehensive test plans covering functionality, performance, security, and usability."
+                              },
+                              {
+                                "primary": "Continuous Testing",
+                                "secondary": "Testing throughout the development lifecycle, not just at the end of the project."
+                              },
+                              {
+                                "primary": "User Acceptance Testing",
+                                "secondary": "Involving stakeholders in the testing process to ensure the solution meets business needs."
+                              }
+                            ],
+                            "contactText": "Want to learn more about our quality processes?",
+                            "contactLink": "Reach out to our quality team"
+                          },
+                          
+                            "stories": {
+                              "breadcrumb": {
+                                "home": "Home",
+                                "current": "Success Stories"
+                              },
+                              "title": "Success Stories",
+                              "description": "Discover how PRowebsa has helped businesses transform their digital presence and achieve their goals through innovative technology solutions.",
+                              "storiesList": [
+                                {
+                                  "title": "E-commerce Revolution",
+                                  "description": "How we helped a retail brand increase online sales by 240% with a custom e-commerce platform and mobile app.",
+                                  "button": "Read Full Story"
+                                },
+                                {
+                                  "title": "Healthcare Transformation",
+                                  "description": "Developing a secure patient portal and telehealth solution for a healthcare provider serving 50,000+ patients.",
+                                  "button": "Read Full Story"
+                                },
+                                {
+                                  "title": "FinTech Innovation",
+                                  "description": "Building a cutting-edge financial analytics platform for a startup that secured $5M in Series A funding.",
+                                  "button": "Read Full Story"
+                                },
+                                {
+                                  "title": "Education Platform",
+                                  "description": "Creating a scalable learning management system for an educational institution serving 10,000+ students.",
+                                  "button": "Read Full Story"
+                                }
+                              ],
+                              "ctaText": "Want to be our next success story?",
+                              "ctaButton": "Start Your Project"
+                            },
+                            
+                              "terms": {
+                                "breadcrumb": {
+                                  "home": "Home",
+                                  "policies": "Policies",
+                                  "current": "Terms of Service"
+                                },
+                                "title": "Terms of Service",
+                                "effectiveDate": "Effective Date: [Insert Date]",
+                                "sections": [
+                                  {
+                                    "title": "1. Introduction",
+                                    "content": "PRowebsa (\"we,\" \"us,\" \"our\") provides web development, mobile applications, cybersecurity, and IT consulting services. These Terms govern your use of our services."
+                                  },
+                                  {
+                                    "title": "2. Services",
+                                    "content": "We will deliver services as detailed in our proposals and statements of work. The scope, timeline, and deliverables will be specified in project documentation."
+                                  },
+                                  {
+                                    "title": "3. Client Responsibilities",
+                                    "content": "Clients must provide necessary materials, information, and feedback in a timely manner. Delays may impact project timelines and costs."
+                                  },
+                                  {
+                                    "title": "4. Payment Terms",
+                                    "content": "Payment schedules will be outlined in project proposals. Late payments may incur fees and result in service suspension."
+                                  },
+                                  {
+                                    "title": "5. Intellectual Property",
+                                    "content": "Upon full payment, clients receive ownership of custom-developed work. PRowebsa retains rights to pre-existing tools and frameworks."
+                                  },
+                                  {
+                                    "title": "6. Limitation of Liability",
+                                    "content": "Our liability is limited to the amount paid for services. We are not liable for indirect or consequential damages."
+                                  }
+                                ],
+                                "lastUpdated": "Last updated: "
+                              },
+                              
+                                "trustSafety": {
+                                  "breadcrumb": {
+                                    "home": "Home",
+                                    "current": "Trust & Safety"
+                                  },
+                                  "title": "Trust & Safety",
+                                  "intro": "At PRowebsa, we prioritize the security and integrity of our clients' data and digital assets. Our comprehensive trust and safety protocols ensure your peace of mind throughout our engagement.",
+                                  "securityMeasuresTitle": "Our Security Measures",
+                                  "securityMeasures": [
+                                    {
+                                      "icon": "SecurityIcon",
+                                      "primary": "Data Encryption",
+                                      "secondary": "All sensitive data is encrypted in transit and at rest using industry-standard protocols."
+                                    },
+                                    {
+                                      "icon": "LockIcon",
+                                      "primary": "Secure Development Practices",
+                                      "secondary": "We follow OWASP guidelines and conduct regular security audits throughout the development lifecycle."
+                                    },
+                                    {
+                                      "icon": "VerifiedUserIcon",
+                                      "primary": "Compliance Standards",
+                                      "secondary": "Our processes align with GDPR, HIPAA, and other relevant compliance frameworks based on project requirements."
+                                    }
+                                  ],
+                                  "commitmentTitle": "Our Commitment to You",
+                                  "commitmentIntro": "We understand that trust is earned through consistent performance and transparency. That's why we:",
+                                  "commitmentItems": [
+                                    "Maintain clear communication channels throughout our engagement",
+                                    "Provide regular progress updates and demonstrations",
+                                    "Offer transparent pricing with no hidden fees",
+                                    "Sign comprehensive confidentiality agreements before project initiation",
+                                    "Carry professional liability insurance to protect your investment"
+                                  ],
+                                  "contactText": "Have specific security requirements?",
+                                  "contactLink": "Contact our security team"
+                                }
+                              
+                              
+                            
+                            
+                          
+                          
+                        
+                        
+                      
+                      
+                    
+                    
+                  
+                  
+                
+                
+              
+              
+            
+            
+          
+          
+          
+        }
+  
