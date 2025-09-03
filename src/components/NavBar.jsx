@@ -162,9 +162,10 @@ export default function Navbar(props) {
                 src={logo}
                 alt="Logo"
                 sx={{
-                  height: 50,       // fixe la hauteur
-                  width: "auto",    // conserve les proportions
+                  height: 70,       // fixe la hauteur
+                  width: "150px",    // conserve les proportions
                   mr: 2,
+                  mt: 2,
                 }}
               />
             </RouterLink>

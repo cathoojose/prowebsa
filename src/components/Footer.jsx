@@ -68,8 +68,8 @@ export default function Footer() {
             <FooterText>{t("footer.address")}</FooterText>
             <FooterText>{t("footer.phone")}</FooterText>
             <FooterText>{t("footer.email")}</FooterText>
-            <FooterLink href="mailto:contact@prowebsa.com">
-              contact@prowebsa.com
+            <FooterLink href="mailto:infos@prowebsa.com">
+              infos@prowebsa.com
             </FooterLink>
             <Box sx={{ mt: 2 }}>
               <FooterText>{t("footer.follow_us")}</FooterText>

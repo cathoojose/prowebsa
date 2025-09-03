@@ -22,6 +22,8 @@ import {
 import { useTranslation } from 'react-i18next';
 import { Link as RouterLink } from 'react-router-dom';
 import aboutImg from "../assets/about.jpg";
+import vectorImg from "../assets/vector2.png";
+
 
 // Team data
 const teamMembers = [
@@ -81,9 +83,14 @@ const AboutPage = () => {
       <Box
         sx={{
           background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.primary.dark} 100%)`,
-          color: 'white',
+          color: 'bleu',
           py: 10,
-          textAlign: 'center'
+          textAlign: 'center',
+          backgroundImage: `url(${vectorImg})`,
+          backgroundSize: 'contain',
+          backgroundPosition: 'center',
+          // backgroundSize:'1000px's
+        
         }}
       >
         <Container maxWidth="lg">
@@ -182,56 +189,88 @@ const AboutPage = () => {
         </Grid>
       </Container>
 
-      {/* Mission & Vision Section */}
-      <Container maxWidth="lg" sx={{ py: 8 }}>
-        <Typography variant="h3" component="h2" align="center" gutterBottom sx={{ fontWeight: 600, mb: 6 }}>
-          {t('about.mission_title')}
-        </Typography>
-        <Grid container spacing={4}>
-          <Grid size={{ xs: 12, md: 6 }}>
-            <Card sx={{ height: '100%', textAlign: 'center', p: 3, backgroundColor: 'primary.light', color: 'white' }}>
-              <CardContent>
-                <Box
-                  sx={{
-                    fontSize: 50,
-                    display: 'flex',
-                    justifyContent: 'center',
-                    mb: 2
-                  }}
-                >
-                </Box>
-                <Typography variant="h4" component="h3" gutterBottom>
-                  {t('about.mission_our')}
-                </Typography>
-                <Typography variant="body1" sx={{ fontStyle: 'italic' }}>
-                  {t('about.mission_text')}
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid size={{ xs: 12, md: 6 }}>
-            <Card sx={{ height: '100%', textAlign: 'center', p: 3, backgroundColor: '#ff5600', color: 'white' }}>
-              <CardContent>
-                <Box
-                  sx={{
-                    fontSize: 50,
-                    display: 'flex',
-                    justifyContent: 'center',
-                    mb: 2
-                  }}
-                >
-                </Box>
-                <Typography variant="h4" component="h3" gutterBottom>
-                  {t('about.vision_our')}
-                </Typography>
-                <Typography variant="body1" sx={{ fontStyle: 'italic' }}>
-                  {t('about.vision_text')}
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-        </Grid>
-      </Container>
+     {/* Mission & Vision Section */}
+<Container maxWidth="lg" sx={{ py: 8, borderRadius: 4 }}>
+  <Typography variant="h3" component="h2" align="center" gutterBottom sx={{ fontWeight: 600, mb: 6 }}>
+    {t('about.mission_title')}
+  </Typography>
+  <Grid container spacing={4}>
+    <Grid size={{ xs: 12, md: 6 }}>
+      <Card sx={{ 
+        height: '100%', 
+        textAlign: 'center', 
+        p: 3, 
+        backgroundColor: 'white', 
+        color: 'black',
+        borderRadius: '20px',
+        transition: 'all 0.9s ease-in-out',
+        boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+        transform: 'scale(1)',
+        '&:hover': {
+          backgroundColor: 'primary.main',
+          color: 'white',
+          boxShadow: '0 12px 24px rgba(0,0,0,0.2)',
+          transform: 'scale(1.10)',
+        }
+      }}>
+        <CardContent>
+          <Box
+            sx={{
+              fontSize: 50,
+              display: 'flex',
+              justifyContent: 'center',
+              mb: 2
+            }}
+          >
+          </Box>
+          <Typography variant="h4" component="h3" gutterBottom>
+            {t('about.mission_our')}
+          </Typography>
+          <Typography variant="body1" sx={{ fontStyle: 'italic' }}>
+            {t('about.mission_text')}
+          </Typography>
+        </CardContent>
+      </Card>
+    </Grid>
+    <Grid size={{ xs: 12, md: 6 }}>
+      <Card sx={{ 
+        height: '100%', 
+        textAlign: 'center', 
+        p: 3, 
+        backgroundColor: 'white', 
+        color: 'black',
+        borderRadius: '20px',
+        transition: 'all 1.9s ease-in-out',
+        boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+        transform: 'scale(1)',
+        '&:hover': {
+          backgroundColor: '#ff5600',
+          color: 'white',
+          boxShadow: '0 12px 24px rgba(0,0,0,0.2)',
+          transform: 'scale(1.09)',
+        }
+      }}>
+        <CardContent>
+          <Box
+            sx={{
+              fontSize: 50,
+              display: 'flex',
+              justifyContent: 'center',
+              mb: 2
+            }}
+          >
+          </Box>
+          <Typography variant="h4" component="h3" gutterBottom>
+            {t('about.vision_our')}
+          </Typography>
+          <Typography variant="body1" sx={{ fontStyle: 'italic' }}>
+            {t('about.vision_text')}
+          </Typography>
+        </CardContent>
+      </Card>
+    </Grid>
+  </Grid>
+</Container>
 
       {/* Team Section */}
       <Box sx={{ bgcolor: 'grey.50', py: 8 }}>
