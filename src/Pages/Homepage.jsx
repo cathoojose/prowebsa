@@ -10,7 +10,7 @@ import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import Avatar from '@mui/material/Avatar'
 import { Link as RouterLink } from 'react-router-dom'
-import homeHero from '../assets/Homepages.jpg'
+// Removed static hero image in favor of animated background
 import webImage from '../assets/web.jpg'
 import CarouselLogos from "./CarouselLogos";
 
@@ -83,32 +83,121 @@ export default function Homepage() {
           minHeight: { xs: 420, md: 520 },
           display: 'flex',
           alignItems: 'center',
-          backgroundImage: `url(${homeHero})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          overflow: 'hidden',
+          background: `radial-gradient(1200px 800px at 70% 0%, #111d4d, rgba(17,29,77,0.4) 60%),
+                        radial-gradient(900px 600px at 0% 20%, #0b1536, rgba(11,21,54,0.2) 60%),
+                        linear-gradient(180deg, #0a1430 0%, #0d1840 60%, #0a1430 100%)`,
         }}
       >
-        <Box sx={{ position: 'absolute', inset: 0, bgcolor: 'rgba(0,0,0,0.35)' }} />
+        <Box sx={{ position: 'absolute', inset: 0, bgcolor: 'rgba(0,0,0,0.15)' }} />
+        {/* Animated blue bubbles background (clusters) */}
+        <Box
+          sx={{
+            position: 'absolute',
+            inset: 0,
+            overflow: 'hidden',
+            pointerEvents: 'none',
+            '&::before, &::after': {
+              content: '""',
+              position: 'absolute',
+              borderRadius: '50%',
+              filter: 'blur(8px)',
+              background: 'radial-gradient(circle at 30% 30%, rgba(86, 142, 255, 0.7), rgba(30, 100, 220, 0) 60%)',
+              width: 340,
+              height: 340,
+              animation: 'floatY 9s ease-in-out infinite',
+              boxShadow: 'inset -20px -30px 60px rgba(0,0,0,0.25), 0 20px 40px rgba(0,0,0,0.35)'
+            },
+            '&::before': { top: -80, left: -60, animationDelay: '0s' },
+            '&::after': {
+              bottom: -120, right: -100,
+              background: 'radial-gradient(circle at 70% 70%, rgba(86,141,255,0.5), rgba(30,100,220,0.0) 60%)',
+              width: 420, height: 420, animationDelay: '3s'
+            },
+            '@keyframes floatY': {
+              '0%, 100%': { transform: 'translateY(0) scale(1)' },
+              '50%': { transform: 'translateY(-20px) scale(1.05)' }
+            }
+          }}
+        />
+        {/* Additional bubbles for depth */}
+        <Box sx={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
+          <Box sx={{ position: 'absolute', top: 60, left: 80, width: 140, height: 140, borderRadius: '50%',
+            background: 'radial-gradient( circle at 35% 35%, rgba(110,160,255,0.6), rgba(20,80,200,0) 65% )',
+            filter: 'blur(2px)', animation: 'floatX 12s ease-in-out infinite',
+            boxShadow: 'inset -10px -20px 40px rgba(0,0,0,0.25), 0 10px 20px rgba(0,0,0,0.25)'}} />
+          <Box sx={{ position: 'absolute', top: 120, left: 180, width: 90, height: 90, borderRadius: '50%',
+            background: 'radial-gradient( circle at 35% 35%, rgba(110,160,255,0.5), rgba(20,80,200,0) 65% )',
+            filter: 'blur(1px)', animation: 'floatX 14s ease-in-out -2s infinite',
+            boxShadow: 'inset -8px -16px 32px rgba(0,0,0,0.25), 0 8px 16px rgba(0,0,0,0.25)'}} />
+          <Box sx={{ position: 'absolute', top: 200, right: 140, width: 190, height: 190, borderRadius: '50%',
+            background: 'radial-gradient( circle at 35% 35%, rgba(90,150,255,0.55), rgba(20,80,200,0) 60% )',
+            filter: 'blur(3px)', animation: 'floatX 16s ease-in-out -4s infinite',
+            boxShadow: 'inset -14px -24px 48px rgba(0,0,0,0.28), 0 14px 28px rgba(0,0,0,0.28)'}} />
+          <Box sx={{ position: 'absolute', bottom: 60, right: 60, width: 120, height: 120, borderRadius: '50%',
+            background: 'radial-gradient( circle at 35% 35%, rgba(120,170,255,0.55), rgba(20,80,200,0) 60% )',
+            filter: 'blur(2px)', animation: 'floatX 18s ease-in-out -6s infinite',
+            boxShadow: 'inset -10px -20px 40px rgba(0,0,0,0.25), 0 10px 20px rgba(0,0,0,0.25)'}} />
+          <Box sx={{
+            '@keyframes floatX': {
+              '0%, 100%': { transform: 'translateX(0) translateY(0)' },
+              '50%': { transform: 'translateX(18px) translateY(-10px)' }
+            }
+          }} />
+        </Box>
+        {/* Parallax waves at the bottom */}
+        <Box sx={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
+          <Box sx={{ position: 'absolute', bottom: -40, left: '-20%', width: '140%', height: '32%',
+            background: 'radial-gradient(120% 100% at 50% 100%, rgba(7,16,40,0.95) 55%, rgba(7,16,40,0) 56%)',
+            animation: 'drift 22s linear infinite', opacity: 0.9 }} />
+          <Box sx={{ position: 'absolute', bottom: -30, left: '-25%', width: '150%', height: '26%',
+            background: 'radial-gradient(120% 100% at 50% 100%, rgba(9,19,48,0.95) 55%, rgba(9,19,48,0) 56%)',
+            animation: 'drift 28s linear -6s infinite', opacity: 0.8 }} />
+          <Box sx={{ position: 'absolute', bottom: -20, left: '-30%', width: '160%', height: '22%',
+            background: 'radial-gradient(120% 100% at 50% 100%, rgba(11,22,58,0.95) 55%, rgba(11,22,58,0) 56%)',
+            animation: 'drift 36s linear -12s infinite', opacity: 0.75 }} />
+          <Box sx={{
+            '@keyframes drift': {
+              '0%': { transform: 'translateX(0)' },
+              '100%': { transform: 'translateX(-6%)' }
+            }
+          }} />
+        </Box>
         <Container maxWidth="lg" sx={{ position: 'relative' }}>
-          <Stack spacing={2} sx={{ maxWidth: { xs: '100%', md: '70%' } }}>
-            <Typography variant="h3" fontWeight={800} sx={{ color: 'common.white' }}>
-              {t("homepage.hero.title")}
-            </Typography>
-            <Typography variant="h6" sx={{ color: 'common.white', opacity: 0.95, fontWeight: 400 }}>
-              {t("homepage.hero.subtitle")}
-            </Typography>
-            <Stack direction="row" spacing={2} sx={{ pt: 1 }}>
-              <Button component={RouterLink} to="/about" variant="contained"
-                sx={{ bgcolor: '#ff5600', '&:hover': { bgcolor: '#bf3a27' } }}>
-                {t("homepage.hero.learn_more")}
-              </Button>
-              <Button component={RouterLink} to="/contact" variant="outlined"
-                sx={{ color: 'common.white', borderColor: 'common.white',
-                  '&:hover': { borderColor: 'common.white', bgcolor: 'rgba(255,255,255,0.1)' } }}>
-                {t("homepage.hero.hire")}
-              </Button>
+          {/* Glassmorphism hero panel */}
+          <Box
+            sx={{
+              maxWidth: { xs: '100%', md: '72%' },
+              px: { xs: 2, md: 4 },
+              py: { xs: 3, md: 4 },
+              borderRadius: 3,
+              // backgroundColor: 'rgba(255, 255, 255, 0.05)',
+              // backdropFilter: 'blur(10px)',
+              // WebkitBackdropFilter: 'blur(10px)',
+              // border: '1px solid rgba(255,255,255,0.35)',
+              // boxShadow: '0 10px 30px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.25)'
+            }}
+          >
+            <Stack spacing={2}>
+              <Typography variant="h3" fontWeight={800} sx={{ color: 'common.white' }}>
+                {t("homepage.hero.title")}
+              </Typography>
+              <Typography variant="h6" sx={{ color: 'common.white', opacity: 0.95, fontWeight: 400 }}>
+                {t("homepage.hero.subtitle")}
+              </Typography>
+              <Stack direction="row" spacing={2} sx={{ pt: 1 }}>
+                <Button component={RouterLink} to="/about" variant="contained"
+                  sx={{ bgcolor: '#ff5600', '&:hover': { bgcolor: '#bf3a27' } }}>
+                  {t("homepage.hero.learn_more")}
+                </Button>
+                <Button component={RouterLink} to="/contact" variant="outlined"
+                  sx={{ color: 'common.white', borderColor: 'common.white',
+                    '&:hover': { borderColor: 'common.white', bgcolor: 'rgba(255,255,255,0.1)' } }}>
+                  {t("homepage.hero.hire")}
+                </Button>
+              </Stack>
             </Stack>
-          </Stack>
+          </Box>
         </Container>
       </Box>
 

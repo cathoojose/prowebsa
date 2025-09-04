@@ -22,7 +22,6 @@ import {
 import { useTranslation } from 'react-i18next';
 import { Link as RouterLink } from 'react-router-dom';
 import aboutImg from "../assets/about.jpg";
-import vectorImg from "../assets/vector2.png";
 
 
 // Team data
@@ -82,13 +81,27 @@ const AboutPage = () => {
       {/* Hero Section */}
       <Box
         sx={{
-          background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.primary.dark} 100%)`,
+          // Tech vector-lines background on white with curvy thin lines and soft fades
           color: 'bleu',
           py: 10,
           textAlign: 'center',
-          backgroundImage: `url(${vectorImg})`,
-          backgroundSize: 'contain',
-          backgroundPosition: 'center',
+          backgroundColor: '#ffffff',
+          backgroundImage: `
+            /* thin curvy rings top-right */
+            // repeating-radial-gradient( circle at 120% -20%, rgba(245,107,38, 0.1) 0 1px, transparent 1px 26px ),
+            /* thin curvy rings bottom-left */
+            // repeating-radial-gradient( circle at -20% 120%, rgba(245,107,38, 0.1) 0 1px, transparent 1px 28px ),
+            /* subtle diagonal flow */
+            repeating-conic-gradient( from 210deg at 70% 30%, rgba(14, 91, 168, 0.21) 0 6deg, transparent 6deg 24deg ),
+            /* soft corner fades for better blending */
+            radial-gradient( 1200px 800px at 100% 0%, rgba(0, 47, 255, 0.2), rgba(18, 18, 18, 0) 60% ),
+            radial-gradient( 1200px 800px at 0% 100%, rgba(36, 36, 36, 0), rgba(255,255,255,0) 60% ),
+            /* soft bottom fade */
+            linear-gradient( to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 100% )
+          `,
+          backgroundSize: 'auto, auto, auto, cover, cover, 100% 40%',
+          backgroundPosition: 'center, center, center, top right, bottom left, bottom',
+          backgroundRepeat: 'repeat, repeat, repeat, no-repeat, no-repeat, no-repeat',
           // backgroundSize:'1000px's
         
         }}

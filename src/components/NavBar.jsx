@@ -142,15 +142,18 @@ export default function Navbar(props) {
         <AppBar 
           component="nav" 
           sx={{ 
-            backgroundColor: hasBanner() ? 'rgba(0,0,0,0)' : 'white', 
-            boxShadow: 'none',
+            backgroundColor: hasBanner() ? 'rgba(255,255,255,0.14)' : 'white', 
+            boxShadow: hasBanner() ? '0 10px 30px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.25)' : 'none',
             color: hasBanner() ? 'white' : 'black',
             transition: 'all 0.3s ease',
             position: 'fixed',
             top: 0,
             left: 0,
             right: 0,
-            zIndex: 1100
+            zIndex: 1100,
+            backdropFilter: hasBanner() ? 'blur(10px)' : 'none',
+            WebkitBackdropFilter: hasBanner() ? 'blur(10px)' : 'none',
+            borderBottom: hasBanner() ? '1px solid rgba(255,255,255,0.35)' : 'none'
           }}
         >
           <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
