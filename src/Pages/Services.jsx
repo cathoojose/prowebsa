@@ -8,6 +8,7 @@ import Accordion from '@mui/material/Accordion'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+// Removed Accordion imports for a cleaner static FAQ layout
 import { Link as RouterLink } from 'react-router-dom'
 import { useTranslation } from "react-i18next"
 
@@ -148,7 +149,7 @@ export default function Services() {
       {/* Services Grid */}
       <Box component="section" sx={{ py: { xs: 6, md: 10 } }}>
         <Container maxWidth="lg">
-          <Typography variant="h5" fontWeight={800} sx={{ mb: 3 }}>
+          <Typography variant="h4" fontWeight={900} sx={{ mb: 3, textAlign: 'center', fontSize: { xs: '1.75rem', md: '2rem' }, letterSpacing: '0.3px' }}>
             {t("servicesPage.sectionTitle")}
           </Typography>
 
@@ -210,7 +211,7 @@ export default function Services() {
       </Box>
 
       {/* CTA */}
-      <Box component="section" sx={{ py: { xs: 6, md: 8 }, position: 'relative', overflow: 'hidden',
+      <Box component="section" sx={{ mb: 10 ,py: { xs: 6, md: 8 }, position: 'relative', overflow: 'hidden',
         background: `radial-gradient(900px 600px at 80% 0%, #1a0f07, rgba(26,15,7,0.4) 60%),
                      linear-gradient(180deg, #0e0906 0%, #140c07 100%)` }}>
         {/* Orange bubbles animation layer for CTA */}
@@ -279,7 +280,7 @@ export default function Services() {
               color: 'common.white',
             }}
           >
-            <Typography variant="h5" fontWeight={800} sx={{ mb: 2 }}>
+            <Typography variant="h4" fontWeight={900} sx={{ mb: 2, textAlign: 'center', letterSpacing: '0.3px', fontSize: { xs: '1.6rem', md: '1.9rem' } }}>
               {t("servicesPage.cta.title")}
             </Typography>
             <Typography variant="h6" sx={{ maxWidth: 900, mx: 'auto', mb: 3 }}>
@@ -299,32 +300,32 @@ export default function Services() {
         </Container>
       </Box>
 
-      {/* FAQs */}
+      {/* FAQs - All questions in accordions */}
       <Box component="section" sx={{ pb: { xs: 6, md: 10 } }}>
         <Container maxWidth="lg">
-          <Accordion defaultExpanded>
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="h6" fontWeight={800}>
-                {t("servicesPage.faqs.title")}
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography variant="caption" color="text.secondary">
-                {t("servicesPage.faqs.subtitle")}
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
+          <Box sx={{ mb: 3, textAlign: 'center' }}>
+            <Typography variant="h4" fontWeight={900} sx={{ mb: 0.5, letterSpacing: '0.3px', fontSize: { xs: '1.6rem', md: '1.9rem' } }}>
+              {t("servicesPage.faqs.title")}
+            </Typography>
+            <Typography variant="caption" color="text.secondary">
+              {t("servicesPage.faqs.subtitle")}
+            </Typography>
+          </Box>
 
-          {faqs.map((item, idx) => (
-            <Accordion key={idx} disableGutters>
-              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography variant="body2">{idx + 1}. {item.q}</Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography variant="body2" color="text.secondary">{item.a}</Typography>
-              </AccordionDetails>
-            </Accordion>
-          ))}
+          <Box>
+            {(Array.isArray(faqs) ? faqs : []).map((item, idx) => (
+              <Accordion key={idx} disableGutters sx={{ mb: 1.5, backgroundColor: 'transparent', border: '1px solid', borderColor: 'divider', borderRadius: 2 }}>
+                <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                  <Typography variant="subtitle1" fontWeight={800}>
+                    {idx + 1}. {item.q}
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography variant="body2" color="text.secondary">{item.a}</Typography>
+                </AccordionDetails>
+              </Accordion>
+            ))}
+          </Box>
         </Container>
       </Box>
     </>

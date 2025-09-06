@@ -72,7 +72,7 @@ const AboutPage = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const { t } = useTranslation();
-  
+
   // Define visionImg with a valid image URL
   const visionImg = 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80';
 
@@ -81,32 +81,94 @@ const AboutPage = () => {
       {/* Hero Section */}
       <Box
         sx={{
-          // Tech vector-lines background on white with curvy thin lines and soft fades
-          color: 'bleu',
-          py: 10,
+          position: 'relative',
+          minHeight: { xs: 420, md: 520 },
+          display: 'flex',
+          alignItems: 'center',
           textAlign: 'center',
-          backgroundColor: '#ffffff',
-          backgroundImage: `
-            /* thin curvy rings top-right */
-            // repeating-radial-gradient( circle at 120% -20%, rgba(245,107,38, 0.1) 0 1px, transparent 1px 26px ),
-            /* thin curvy rings bottom-left */
-            // repeating-radial-gradient( circle at -20% 120%, rgba(245,107,38, 0.1) 0 1px, transparent 1px 28px ),
-            /* subtle diagonal flow */
-            repeating-conic-gradient( from 210deg at 70% 30%, rgba(14, 91, 168, 0.21) 0 6deg, transparent 6deg 24deg ),
-            /* soft corner fades for better blending */
-            radial-gradient( 1200px 800px at 100% 0%, rgba(0, 47, 255, 0.2), rgba(18, 18, 18, 0) 60% ),
-            radial-gradient( 1200px 800px at 0% 100%, rgba(36, 36, 36, 0), rgba(255,255,255,0) 60% ),
-            /* soft bottom fade */
-            linear-gradient( to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 100% )
-          `,
-          backgroundSize: 'auto, auto, auto, cover, cover, 100% 40%',
-          backgroundPosition: 'center, center, center, top right, bottom left, bottom',
-          backgroundRepeat: 'repeat, repeat, repeat, no-repeat, no-repeat, no-repeat',
-          // backgroundSize:'1000px's
-        
+          color: 'common.white',
+          py: 10,
+          overflow: 'hidden',
+          background: `radial-gradient(1200px 800px at 70% 0%, #1a0f2a, rgba(26,15,42,0.4) 60%),
+                       radial-gradient(900px 600px at 0% 20%, #12091f, rgba(18,9,31,0.2) 60%),
+                       linear-gradient(180deg, #0b0614 0%, #1a0f2a 60%, #0b0614 100%)`
         }}
       >
-        <Container maxWidth="lg">
+        <Box sx={{ position: 'absolute', inset: 0, bgcolor: 'rgba(0,0,0,0.15)' }} />
+        {/* Neon purple bubbles background */}
+        <Box
+          sx={{
+            position: 'absolute',
+            inset: 0,
+            overflow: 'hidden',
+            pointerEvents: 'none',
+            '&::before, &::after': {
+              content: '""',
+              position: 'absolute',
+              borderRadius: '50%',
+              filter: 'blur(8px)',
+              background: 'radial-gradient(circle at 30% 30%, rgba(180, 70, 255, 0.6), rgba(120, 30, 220, 0) 60%)',
+              width: 340,
+              height: 340,
+              animation: 'floatY 9s ease-in-out infinite',
+              boxShadow: 'inset -20px -30px 60px rgba(0,0,0,0.25), 0 20px 40px rgba(0,0,0,0.35)'
+            },
+            '&::before': { top: -80, left: -60, animationDelay: '0s' },
+            '&::after': {
+              bottom: -120, right: -100,
+              background: 'radial-gradient(circle at 70% 70%, rgba(190, 90, 255, 0.55), rgba(120, 30, 220, 0) 60%)',
+              width: 420, height: 420, animationDelay: '3s'
+            },
+            '@keyframes floatY': {
+              '0%, 100%': { transform: 'translateY(0) scale(1)' },
+              '50%': { transform: 'translateY(-20px) scale(1.05)' }
+            }
+          }}
+        />
+        {/* Additional bubbles for depth */}
+        <Box sx={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
+          <Box sx={{ position: 'absolute', top: 60, left: 80, width: 140, height: 140, borderRadius: '50%',
+            background: 'radial-gradient( circle at 35% 35%, rgba(195, 100, 255, 0.6), rgba(120, 30, 220, 0) 65% )',
+            filter: 'blur(2px)', animation: 'floatX 12s ease-in-out infinite',
+            boxShadow: 'inset -10px -20px 40px rgba(0,0,0,0.25), 0 10px 20px rgba(0,0,0,0.25)'}} />
+          <Box sx={{ position: 'absolute', top: 120, left: 180, width: 90, height: 90, borderRadius: '50%',
+            background: 'radial-gradient( circle at 35% 35%, rgba(205, 120, 255, 0.5), rgba(120, 30, 220, 0) 65% )',
+            filter: 'blur(1px)', animation: 'floatX 14s ease-in-out -2s infinite',
+            boxShadow: 'inset -8px -16px 32px rgba(0,0,0,0.25), 0 8px 16px rgba(0,0,0,0.25)'}} />
+          <Box sx={{ position: 'absolute', top: 200, right: 140, width: 190, height: 190, borderRadius: '50%',
+            background: 'radial-gradient( circle at 35% 35%, rgba(185, 90, 255, 0.55), rgba(120, 30, 220, 0) 60% )',
+            filter: 'blur(3px)', animation: 'floatX 16s ease-in-out -4s infinite',
+            boxShadow: 'inset -14px -24px 48px rgba(0,0,0,0.28), 0 14px 28px rgba(0,0,0,0.28)'}} />
+          <Box sx={{ position: 'absolute', bottom: 60, right: 60, width: 120, height: 120, borderRadius: '50%',
+            background: 'radial-gradient( circle at 35% 35%, rgba(210, 120, 255, 0.55), rgba(120, 30, 220, 0) 60% )',
+            filter: 'blur(2px)', animation: 'floatX 18s ease-in-out -6s infinite',
+            boxShadow: 'inset -10px -20px 40px rgba(0,0,0,0.25), 0 10px 20px rgba(0,0,0,0.25)'}} />
+          <Box sx={{
+            '@keyframes floatX': {
+              '0%, 100%': { transform: 'translateX(0) translateY(0)' },
+              '50%': { transform: 'translateX(18px) translateY(-10px)' }
+            }
+          }} />
+        </Box>
+        {/* Parallax waves at the bottom */}
+        <Box sx={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
+          <Box sx={{ position: 'absolute', bottom: -40, left: '-20%', width: '140%', height: '32%',
+            background: 'radial-gradient(120% 100% at 50% 100%, rgba(20,8,35,0.95) 55%, rgba(20,8,35,0) 56%)',
+            animation: 'drift 22s linear infinite', opacity: 0.9 }} />
+          <Box sx={{ position: 'absolute', bottom: -30, left: '-25%', width: '150%', height: '26%',
+            background: 'radial-gradient(120% 100% at 50% 100%, rgba(26,10,45,0.95) 55%, rgba(26,10,45,0) 56%)',
+            animation: 'drift 28s linear -6s infinite', opacity: 0.8 }} />
+          <Box sx={{ position: 'absolute', bottom: -20, left: '-30%', width: '160%', height: '22%',
+            background: 'radial-gradient(120% 100% at 50% 100%, rgba(32,12,56,0.95) 55%, rgba(32,12,56,0) 56%)',
+            animation: 'drift 36s linear -12s infinite', opacity: 0.75 }} />
+          <Box sx={{
+            '@keyframes drift': {
+              '0%': { transform: 'translateX(0)' },
+              '100%': { transform: 'translateX(-6%)' }
+            }
+          }} />
+        </Box>
+        <Container maxWidth="lg" sx={{ position: 'relative' }}>
           <Typography variant="h2" component="h1" gutterBottom sx={{ fontWeight: 700 }}>
             {t('about.hero_title')}
           </Typography>
@@ -149,7 +211,7 @@ const AboutPage = () => {
       </Container>
 
       {/* Stats Section */}
-      <Box sx={{ bgcolor: '#f5f5f5', py: 8 }}>
+      {/* <Box sx={{ bgcolor: '#f5f5f5', py: 8 }}>
         <Container maxWidth="lg">
           <Grid container spacing={4}>
             {stats.map((stat, index) => (
@@ -166,7 +228,7 @@ const AboutPage = () => {
             ))}
           </Grid>
         </Container>
-      </Box>
+      </Box> */}
 
       {/* Values Section */}
       <Container maxWidth="lg" sx={{ py: 8 }}>
@@ -202,91 +264,87 @@ const AboutPage = () => {
         </Grid>
       </Container>
 
-     {/* Mission & Vision Section */}
-<Container maxWidth="lg" sx={{ py: 8, borderRadius: 4 }}>
-  <Typography variant="h3" component="h2" align="center" gutterBottom sx={{ fontWeight: 600, mb: 6 }}>
-    {t('about.mission_title')}
-  </Typography>
-  <Grid container spacing={4}>
-    <Grid size={{ xs: 12, md: 6 }}>
-      <Card sx={{ 
-        height: '100%', 
-        textAlign: 'center', 
-        p: 3, 
-        backgroundColor: 'white', 
-        color: 'black',
-        borderRadius: '20px',
-        transition: 'all 0.9s ease-in-out',
-        boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
-        transform: 'scale(1)',
-        '&:hover': {
-          backgroundColor: 'primary.main',
-          color: 'white',
-          boxShadow: '0 12px 24px rgba(0,0,0,0.2)',
-          transform: 'scale(1.10)',
-        }
-      }}>
-        <CardContent>
-          <Box
-            sx={{
-              fontSize: 50,
-              display: 'flex',
-              justifyContent: 'center',
-              mb: 2
-            }}
-          >
-          </Box>
-          <Typography variant="h4" component="h3" gutterBottom>
-            {t('about.mission_our')}
-          </Typography>
-          <Typography variant="body1" sx={{ fontStyle: 'italic' }}>
-            {t('about.mission_text')}
-          </Typography>
-        </CardContent>
-      </Card>
-    </Grid>
-    <Grid size={{ xs: 12, md: 6 }}>
-      <Card sx={{ 
-        height: '100%', 
-        textAlign: 'center', 
-        p: 3, 
-        backgroundColor: 'white', 
-        color: 'black',
-        borderRadius: '20px',
-        transition: 'all 1.9s ease-in-out',
-        boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
-        transform: 'scale(1)',
-        '&:hover': {
-          backgroundColor: '#ff5600',
-          color: 'white',
-          boxShadow: '0 12px 24px rgba(0,0,0,0.2)',
-          transform: 'scale(1.09)',
-        }
-      }}>
-        <CardContent>
-          <Box
-            sx={{
-              fontSize: 50,
-              display: 'flex',
-              justifyContent: 'center',
-              mb: 2
-            }}
-          >
-          </Box>
-          <Typography variant="h4" component="h3" gutterBottom>
-            {t('about.vision_our')}
-          </Typography>
-          <Typography variant="body1" sx={{ fontStyle: 'italic' }}>
-            {t('about.vision_text')}
-          </Typography>
-        </CardContent>
-      </Card>
-    </Grid>
-  </Grid>
-</Container>
+      {/* Mission & Vision Section */}
+      <Container maxWidth="lg" sx={{ py: 8, borderRadius: 4 }}>
+        <Typography variant="h3" component="h2" align="center" gutterBottom sx={{ fontWeight: 600, mb: 6 }}>
+          {t('about.mission_title')}
+        </Typography>
+        <Grid container spacing={4}>
+          <Grid size={{ xs: 12, md: 6 }}>
+            <Card sx={{
+              height: '100%',
+              textAlign: 'center',
+              p: 3,
+              backgroundColor: 'white',
+              color: 'black',
+              borderRadius: '20px',
+              transition: 'all 0.25s ease-out',
+              boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+              transform: 'scale(1)',
+              '&:hover': {
+                boxShadow: `0 12px 24px rgba(0,0,0,0.2), 0 10px 35px ${theme.palette.primary.main}44, 0 0 0 6px ${theme.palette.primary.main}22`,
+                transform: 'scale(1.10)',
+              }
+            }}>
+              <CardContent>
+                <Box
+                  sx={{
+                    fontSize: 50,
+                    display: 'flex',
+                    justifyContent: 'center',
+                    mb: 2
+                  }}
+                >
+                </Box>
+                <Typography variant="h4" component="h3" gutterBottom>
+                  {t('about.mission_our')}
+                </Typography>
+                <Typography variant="body1" sx={{ fontStyle: 'italic' }}>
+                  {t('about.mission_text')}
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid size={{ xs: 12, md: 6 }}>
+            <Card sx={{
+              height: '100%',
+              textAlign: 'center',
+              p: 3,
+              backgroundColor: 'white',
+              color: 'black',
+              borderRadius: '20px',
+              transition: 'all 0.25s ease-out',
+              boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+              transform: 'scale(1)',
+              '&:hover': {
+                boxShadow: '0 12px 24px rgba(0,0,0,0.2), 0 10px 35px rgba(255,86,0,0.35), 0 0 0 6px rgba(255,86,0,0.15)',
+                transform: 'scale(1.09)',
+              }
+            }}>
+              <CardContent>
+                <Box
+                  sx={{
+                    fontSize: 50,
+                    display: 'flex',
+                    justifyContent: 'center',
+                    mb: 2
+                  }}
+                >
+                </Box>
+                <Typography variant="h4" component="h3" gutterBottom>
+                  {t('about.vision_our')}
+                </Typography>
+                <Typography variant="body1" sx={{ fontStyle: 'italic' }}>
+                  {t('about.vision_text')}
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+        </Grid>
+      </Container>
 
       {/* Team Section */}
-      <Box sx={{ bgcolor: 'grey.50', py: 8 }}>
+      {/* <Box sx={{ bgcolor: 'grey.50', py: 8 }}>
         <Container maxWidth="lg">
           <Typography variant="h3" component="h2" align="center" gutterBottom sx={{ fontWeight: 600, mb: 6 }}>
             {t('about.team_title')}
@@ -307,7 +365,7 @@ const AboutPage = () => {
                     </Typography>
                     <Chip
                       label={member.role}
-                      sx={{ 
+                      sx={{
                         mb: 2,
                         backgroundColor: '#ff5600',
                         color: 'white',
@@ -325,17 +383,17 @@ const AboutPage = () => {
             ))}
           </Grid>
         </Container>
-      </Box>
+      </Box> */}
 
       {/* Call to Action Section */}
-      <Box 
-        sx={{ 
-          py: { xs: 10, md: 15 }, 
-          textAlign: 'center', 
-          color: 'white', 
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${visionImg})`, 
-          backgroundSize: 'cover', 
-          backgroundPosition: 'center' 
+      <Box
+        sx={{
+          py: { xs: 10, md: 15 },
+          textAlign: 'center',
+          color: 'white',
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${visionImg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
         }}
       >
         <Container maxWidth="md">
@@ -345,15 +403,15 @@ const AboutPage = () => {
           <Typography variant="h6" sx={{ mb: 4 }}>
             {t('about.cta_subtitle')}
           </Typography>
-          <Button 
-            size="large" 
-            variant="contained" 
+          <Button
+            size="large"
+            variant="contained"
             component={RouterLink}
             to="/contact"
-            sx={{ 
-              backgroundColor: '#ff5600', 
-              '&:hover': { backgroundColor: '#f27438' }, 
-              px: 5 
+            sx={{
+              backgroundColor: '#ff5600',
+              '&:hover': { backgroundColor: '#f27438' },
+              px: 5
             }}
           >
             {t('about.cta_button')}
