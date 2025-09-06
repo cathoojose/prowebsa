@@ -27,6 +27,14 @@ import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone'
 export default function Services() {
   const { t } = useTranslation()
 
+  const titleOrangeGradientStyle = {
+    background: 'linear-gradient(90deg, rgba(255, 150, 80, 1) 0%, rgba(255,120,50,1) 50%, rgba(255,170,110,1) 100%)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    backgroundClip: 'text',
+    color: 'transparent'
+  }
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -134,7 +142,7 @@ export default function Services() {
           }} />
         </Box>
         <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
-          <Typography variant="h3" fontWeight={900} sx={{ color: 'common.white' }}>
+          <Typography variant="h3" fontWeight={900} sx={{ textAlign: 'center', ...titleOrangeGradientStyle }}>
             {t("servicesPage.hero.title")}
           </Typography>
           <Typography
@@ -195,7 +203,7 @@ export default function Services() {
                       {t(`servicesPage.cards.${svc.key}.desc`)}
                     </Typography>
 
-                    {/*  <Button
+                  {/*  <Button
                       size="small"
                       variant="contained"
                       sx={{ mt: 2, bgcolor: '#ff5600', '&:hover': { bgcolor: '#bf3a27' } }}
@@ -280,18 +288,18 @@ export default function Services() {
               color: 'common.white',
             }}
           >
-            <Typography variant="h4" fontWeight={900} sx={{ mb: 2, textAlign: 'center', letterSpacing: '0.3px', fontSize: { xs: '1.6rem', md: '1.9rem' } }}>
+            <Typography variant="h4" fontWeight={900} sx={{ mb: 2, textAlign: 'center', letterSpacing: '0.3px', fontSize: { xs: '1.6rem', md: '1.9rem', ...titleOrangeGradientStyle } }}>
               {t("servicesPage.cta.title")}
             </Typography>
             <Typography variant="h6" sx={{ maxWidth: 900, mx: 'auto', mb: 3 }}>
               {t("servicesPage.cta.subtitle")}
             </Typography>
-            <Button
-              component={RouterLink}
+            <Button 
+              component={RouterLink} 
               to="/contact"
               onClick={scrollToTop}
-              size="large"
-              variant="contained"
+              size="large" 
+              variant="contained" 
               sx={{ bgcolor: '#ff5600', '&:hover': { bgcolor: '#f27438' }, px: 5, borderRadius: 2 }}
             >
               {t("servicesPage.cta.button")}
@@ -304,27 +312,27 @@ export default function Services() {
       <Box component="section" sx={{ pb: { xs: 6, md: 10 } }}>
         <Container maxWidth="lg">
           <Box sx={{ mb: 3, textAlign: 'center' }}>
-            <Typography variant="h4" fontWeight={900} sx={{ mb: 0.5, letterSpacing: '0.3px', fontSize: { xs: '1.6rem', md: '1.9rem' } }}>
-              {t("servicesPage.faqs.title")}
-            </Typography>
-            <Typography variant="caption" color="text.secondary">
-              {t("servicesPage.faqs.subtitle")}
-            </Typography>
+            <Typography variant="h4" fontWeight={900} sx={{ color: "#ff5600",mb: 0.5, letterSpacing: '0.3px', fontSize: { xs: '1.6rem', md: '1.9rem' } }}>
+                {t("servicesPage.faqs.title")}
+              </Typography>
+            <Typography variant="caption" fontWeight={600} color="text.secondary">
+                {t("servicesPage.faqs.subtitle")}
+              </Typography>
           </Box>
 
           <Box>
             {(Array.isArray(faqs) ? faqs : []).map((item, idx) => (
               <Accordion key={idx} disableGutters sx={{ mb: 1.5, backgroundColor: 'transparent', border: '1px solid', borderColor: 'divider', borderRadius: 2 }}>
-                <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                   <Typography variant="subtitle1" fontWeight={800}>
                     {idx + 1}. {item.q}
                   </Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography variant="body2" color="text.secondary">{item.a}</Typography>
-                </AccordionDetails>
-              </Accordion>
-            ))}
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography variant="body2" color="text.secondary">{item.a}</Typography>
+              </AccordionDetails>
+            </Accordion>
+          ))}
           </Box>
         </Container>
       </Box>

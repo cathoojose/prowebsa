@@ -44,6 +44,14 @@ export default function Homepage() {
     { name: t("homepage.team.3.name"), role: t("homepage.team.3.role") },
   ];
 
+  const titleBlueGradientStyle = {
+    background: 'linear-gradient(90deg, rgba(55,138,232,1) 0%, rgba(86,141,255,1) 50%, rgba(120,170,255,1) 100%)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    backgroundClip: 'text',
+    color: 'transparent'
+  };
+
   const textBlocks = [
     {
       title: t("homepage.blocks.0.title"),
@@ -65,12 +73,12 @@ export default function Homepage() {
       textLines: t("homepage.blocks.3.lines", { returnObjects: true }),
       align: "right",
     },
-    {
-      title: t("homepage.blocks.4.title"),
-      textLines: t("homepage.blocks.4.lines", { returnObjects: true }),
-      align: "left",
-      highlight: true,
-    },
+    // {
+    //   title: t("homepage.blocks.4.title"),
+    //   textLines: t("homepage.blocks.4.lines", { returnObjects: true }),
+    //   align: "left",
+    //   highlight: true,
+    // },
   ];
 
   return (
@@ -194,26 +202,26 @@ export default function Homepage() {
             }}
           >
             <Stack spacing={2}>
-              <Typography variant="h3" fontWeight={800} sx={{ color: 'common.white' }}>
-                {t("homepage.hero.title")}
-              </Typography>
-              <Typography variant="h6" sx={{ color: 'common.white', opacity: 0.95, fontWeight: 400 }}>
-                {t("homepage.hero.subtitle")}
-              </Typography>
-              <Stack direction="row" spacing={2} sx={{ pt: 1 }}>
-                <Button component={RouterLink} to="/about" variant="contained"
-                  sx={{ bgcolor: '#ff5600', '&:hover': { bgcolor: '#bf3a27' } }}>
-                  {t("homepage.hero.learn_more")}
-                </Button>
-                <Button component={RouterLink} to="/contact" variant="outlined"
+            <Typography variant="h3" fontWeight={800} sx={{ color: 'common.white' }}>
+              {t("homepage.hero.title")}
+            </Typography>
+            <Typography variant="h6" sx={{ color: 'common.white', opacity: 0.95, fontWeight: 400 }}>
+              {t("homepage.hero.subtitle")}
+            </Typography>
+            <Stack direction="row" spacing={2} sx={{ pt: 1 }}>
+              <Button component={RouterLink} to="/about" variant="contained"
+                sx={{ bgcolor: '#ff5600', '&:hover': { bgcolor: '#bf3a27' } }}>
+                {t("homepage.hero.learn_more")}
+              </Button>
+              <Button component={RouterLink} to="/contact" variant="outlined"
                   sx={{
                     color: 'common.white', borderColor: 'common.white',
                     '&:hover': { borderColor: 'common.white', bgcolor: 'rgba(255,255,255,0.1)' }
                   }}>
-                  {t("homepage.hero.hire")}
-                </Button>
-              </Stack>
+                {t("homepage.hero.hire")}
+              </Button>
             </Stack>
+          </Stack>
           </Box>
         </Container>
       </Box>
@@ -221,7 +229,7 @@ export default function Homepage() {
       {/* ===== Explore Our Services ===== */}
       <Box component="section" sx={{ py: { xs: 6, md: 10 }, bgcolor: 'grey.50' }}>
         <Container maxWidth="lg">
-          <Typography variant="h4" fontWeight={800} sx={{ mb: 3 }}>
+          <Typography variant="h4" fontWeight={900} sx={{ mb: 3, textAlign: 'center', ...titleBlueGradientStyle }}>
             {t("homepage.services.title")}
           </Typography>
 
@@ -349,7 +357,7 @@ export default function Homepage() {
         <Container maxWidth="lg" sx={{ position: 'relative', py: { xs: 6, md: 10 }, px: { xs: 2, md: 0 } }}>
           <Stack spacing={4}>
             <Box sx={{ textAlign: 'center', mb: 4 }}>
-              <Typography variant="h4" fontWeight={800} sx={{ color: 'common.white', mb: 2 }}>
+              <Typography variant="h4" fontWeight={800} sx={{ textAlign: 'center', mb: 2, ...titleBlueGradientStyle }}>
                 {t("homepage.vision.title")}
               </Typography>
               {t("homepage.vision.lines", { returnObjects: true }).map((line, i) => (
@@ -364,7 +372,7 @@ export default function Homepage() {
               <Grid container spacing={4} key={idx}
                 justifyContent={block.align === "left" ? "flex-start" : "flex-end"}>
                 <Grid item xs={12} md={6} sx={{ textAlign: block.align }}>
-                  <Typography variant="h5" fontWeight={900} sx={{ color: 'common.white', mb: 1 }}>
+                  <Typography variant="h5" fontWeight={900} sx={{ color: 'common.white', mb: 1, ...titleBlueGradientStyle }}>
                     {block.title}
                   </Typography>
 
@@ -388,8 +396,8 @@ export default function Homepage() {
 
       <CarouselLogos />
 
-      <div>
-        {/*
+     <div>
+      {/*
 
        ===== Our Team =====
       <Box component="section" sx={{ py: { xs: 6, md: 10 }, bgcolor: '#ffffff' }}>
@@ -420,16 +428,16 @@ export default function Homepage() {
       </Box>
 
      */ }
-      </div>
+     </div>
 
       {/* ===== Join Us ===== */}
       <Box component="section" sx={{ py: { xs: 6, md: 8 } }}>
         <Container maxWidth="lg">
           <Box sx={{ bgcolor: '#efefef', borderRadius: 2, px: { xs: 2, md: 6 }, py: { xs: 4, md: 6 }, textAlign: 'center' }}>
-            <Typography variant="h4" fontWeight={800} sx={{ mb: 1 }}>
+            <Typography variant="h4" fontWeight={900} sx={{ mb: 1, textAlign: 'center', ...titleBlueGradientStyle }}>
               {t("homepage.join.title")}
             </Typography>
-            <Typography variant="h6" fontWeight={800} sx={{ mb: 3 }}>
+            <Typography variant="h6" fontWeight={700} sx={{ mb: 3, textAlign: 'center' }}>
               {t("homepage.join.subtitle")}
             </Typography>
             <Button component={RouterLink} to="/contact" onClick={scrollToTop} size="large"

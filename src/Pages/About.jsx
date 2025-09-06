@@ -72,6 +72,13 @@ const AboutPage = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const { t } = useTranslation();
+  const titlePurpleGradientStyle = {
+    background: 'linear-gradient(90deg, rgba(113, 27, 171, 1) 0%, rgba(175, 60, 251, 1) 50%, rgba(210,120,255,1) 100%)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    backgroundClip: 'text',
+    color: 'transparent'
+  };
 
   // Define visionImg with a valid image URL
   const visionImg = 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80';
@@ -169,7 +176,7 @@ const AboutPage = () => {
           }} />
         </Box>
         <Container maxWidth="lg" sx={{ position: 'relative' }}>
-          <Typography variant="h2" component="h1" gutterBottom sx={{ fontWeight: 700 }}>
+          <Typography variant="h2" component="h1" gutterBottom sx={{ fontWeight: 700, ...titlePurpleGradientStyle }}>
             {t('about.hero_title')}
           </Typography>
           <Typography variant="h5" sx={{ maxWidth: 700, mx: 'auto', mb: 4 }}>
@@ -232,7 +239,7 @@ const AboutPage = () => {
 
       {/* Values Section */}
       <Container maxWidth="lg" sx={{ py: 8 }}>
-        <Typography variant="h3" component="h2" align="center" gutterBottom sx={{ fontWeight: 600, mb: 6 }}>
+        <Typography variant="h3" component="h2" align="center" gutterBottom sx={{ fontWeight: 700, mb: 6, textAlign: 'center'}}>
           {t('about.values_title')}
         </Typography>
         <Grid container spacing={4}>
@@ -266,7 +273,7 @@ const AboutPage = () => {
 
       {/* Mission & Vision Section */}
       <Container maxWidth="lg" sx={{ py: 8, borderRadius: 4 }}>
-        <Typography variant="h3" component="h2" align="center" gutterBottom sx={{ fontWeight: 600, mb: 6 }}>
+        <Typography variant="h3" component="h2" align="center" gutterBottom sx={{ fontWeight: 700, mb: 6, textAlign: 'center'}}>
           {t('about.mission_title')}
         </Typography>
         <Grid container spacing={4}>
