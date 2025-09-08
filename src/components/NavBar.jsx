@@ -44,7 +44,7 @@ export default function Navbar(props) {
 
   // Déterminer si nous sommes sur une page avec bannière
   const hasBanner = () => {
-    const bannerPaths = ['/', '/services', '/contact'];
+    const bannerPaths = ['/', '/services', '/contact', '/about', '/portfolio'];
     return bannerPaths.includes(location.pathname);
   };
 
@@ -68,8 +68,8 @@ export default function Navbar(props) {
   // Items de navigation
   const navItems = [
     { text: 'Services', path: '/services' },
-    { text: 'Portfolio', path: '/portfolio' },
     { text: 'À propos', path: '/about' },
+    { text: 'Portfolio', path: '/portfolio' },
     { text: 'Contact', path: '/contact' },
   ];
 
@@ -94,7 +94,7 @@ export default function Navbar(props) {
               textShadow: hasBanner() ? '0px 2px 4px rgba(0,0,0,0.8)' : 'none',
               justifyContent: 'center',
               '&:hover': {
-                backgroundColor: 'rgba(255, 165, 0, 0.2)',
+                backgroundColor: 'rgba(255, 166, 0, 0.45)',
               }
             }}
           >
@@ -103,7 +103,7 @@ export default function Navbar(props) {
               sx={{
                 textAlign: 'center',
                 '& span': {
-                  fontWeight: hasBanner() ? 600 : 400
+                  fontWeight: hasBanner() ? 600 : 600
                 }
               }}
             />
@@ -142,15 +142,18 @@ export default function Navbar(props) {
         <AppBar 
           component="nav" 
           sx={{ 
-            backgroundColor: hasBanner() ? 'rgba(0,0,0,0)' : 'white', 
-            boxShadow: 'none',
+            backgroundColor: hasBanner() ? 'rgba(255,255,255,0.14)' : 'white', 
+            boxShadow: hasBanner() ? '0 10px 30px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.25)' : 'none',
             color: hasBanner() ? 'white' : 'black',
             transition: 'all 0.3s ease',
             position: 'fixed',
             top: 0,
             left: 0,
             right: 0,
-            zIndex: 1100
+            zIndex: 1100,
+            backdropFilter: hasBanner() ? 'blur(10px)' : 'none',
+            WebkitBackdropFilter: hasBanner() ? 'blur(10px)' : 'none',
+            borderBottom: hasBanner() ? '1px solid rgba(255,255,255,0.35)' : 'none'
           }}
         >
           <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
