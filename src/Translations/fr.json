@@ -33,9 +33,9 @@
       "confidentiality": "Confidentialité",
       "faqs": "FAQ",
       "contact_info": "Informations de Contact",
-      "address": "Adresse : Puit blain #12, PV, Haïti",
-      "phone": "Téléphone : [+] XXX XXX",
-      "email": "Email :",
+      "address": "Address: #10, Puits Blain 12, PV, Haiti",
+      "phone": "Phone: (+509) 4805-3333",
+      "email": "Email : infos@prowebsa.com",
       "follow_us": "Suivez-nous :",
       "socials": "Facebook | LinkedIn | Instagram | Twitter",
       "copyright": "Copyright © {{year}} Prowebsa. Tous droits réservés."
@@ -60,7 +60,7 @@
           "title": "Votre vision, portée par des talents mondiaux",
           "lines": [
             "Pourquoi limiter vos idées à un seul endroit ?",
-            "Le monde regorge d’innovateurs, de créateurs et de solutionneurs prêts à vous aider à bâtir quelque chose de remarquable."
+            "Le monde regorge d’innovateurs, de créateurs  prêts à vous aider à bâtir quelque chose de remarquable."
           ]
         },
         "blocks": [
@@ -105,7 +105,7 @@
           "hero_title": "Notre Histoire",
           "hero_subtitle": "Découvrez notre parcours, nos valeurs et l'équipe exceptionnelle derrière notre succès.",
           "about_title": "Créer de la Valeur grâce à l'Innovation",
-          "about_text1": "PROWEBSA est un projet de startup numérique initié par l’Université Espoir de Calvary Chapel’s, visant à offrir des services technologiques innovants tant au niveau national qu’international.",
+          "about_text1": "PROWEBSA est un projet de startup numérique initié par l’Université Espoir de Calvary Chapel, visant à offrir des services technologiques innovants tant au niveau national qu’international.",
           "about_text2": "Nous sommes spécialisés dans la création de sites web professionnels, d’applications mobiles, de services de cybersécurité, d’analyse de données et de solutions de conseil technologique adaptées à vos besoins.",
           "about_text3": "En tant que passionnés de technologie, nous croyons en la construction de solutions ayant un impact social, économique et éducatif durable.",
           "stats_years": "Années d'Expérience",
@@ -134,75 +134,84 @@
       
         
     
-      "servicesPage": {
-        "hero": {
-          "title": "Services",
-          "subtitle": "Découvrez notre gamme complète de services conçus pour dynamiser vos projets."
-        },
-        "sectionTitle": "Nos Services",
-        "cards": {
-          "webDev": {
-            "title": "Développement Web",
-            "desc": "Sites modernes, responsives et évolutifs adaptés à l'identité de votre marque."
-          },
-          "marketing": {
-            "title": "Marketing Digital",
-            "desc": "Campagnes ciblées qui augmentent la visibilité, l’engagement et les conversions."
-          },
-          "cybersecurity": {
-            "title": "Cybersécurité",
-            "desc": "Protégez vos actifs numériques grâce à des solutions de sécurité avancées."
-          },
-          "network": {
-            "title": "Solutions Réseau",
-            "desc": "Nous concevons, optimisons et maintenons vos réseaux pour assurer le bon fonctionnement de vos opérations."
-          },
-          "data": {
-            "title": "Analyse de Données",
-            "desc": "Transformez vos données brutes en insights clairs et exploitables pour de meilleures décisions."
-          },
-          "consulting": {
-            "title": "Consultation IT",
-            "desc": "Choisissez les bonnes technologies et stratégies pour faire avancer votre entreprise."
-          },
-          "insights": {
-            "title": "Analyses Business",
-            "desc": "Conseils d’experts alignés sur les tendances et opportunités mondiales."
-          },
-          "mobile": {
-            "title": "Développement Mobile",
-            "desc": "Applications mobiles rapides et engageantes pour iOS et Android."
-          },
-          "global": {
-            "title": "Présence Internationale",
-            "desc": "Solutions multilingues et multi-marchés pour élargir votre portée."
-          },
-          "button": "En savoir plus"
-        },
-        "cta": {
-          "title": "Faites partie d’une équipe qui transforme les idées en impact",
-          "subtitle": "Que vous soyez un client en quête d’innovation ou un professionnel prêt à partager votre expertise, nous créons des opportunités pour grandir, collaborer et réussir ensemble.",
-          "button": "Rejoignez-nous"
-        },
-        "faqs": {
-          "title": "FAQs",
-          "subtitle": "Répondez aux questions fréquentes en une phrase simple.",
-          "items": [
-            {
-              "q": "Quels services proposez-vous ?",
-              "a": "Nous proposons le développement web, le marketing, la cybersécurité, le réseau, l’analyse, le conseil et plus encore."
-            },
-            {
-              "q": "Comment commencer ?",
-              "a": "Contactez-nous avec les détails de votre projet et nous vous guiderons dans les prochaines étapes."
-            },
-            {
-              "q": "Combien coûtera mon projet ?",
-              "a": "Le prix dépend de l’ampleur et du délai. Nous fournirons un devis personnalisé après analyse de vos besoins."
-            }
-          ]
-        }
+    
+  "servicesPage": {
+    "hero": {
+      "title": "Services",
+      "subtitle": "Découvrez notre gamme complète de services conçus pour dynamiser vos projets."
+    },
+    "sectionTitle": "Nos Services",
+    "nodes": {
+      "cloud": "Cloud",
+      "email": "Email",
+      "server": "Serveurs",
+      "database": "Base de Données",
+      "monitor": "Web Design",
+      "tablet": "Mobiles"
+    },
+    "cards": {
+      "webDev": {
+        "title": "Développement Web",
+        "desc": "Sites modernes, responsives et évolutifs adaptés à l’identité de votre marque."
       },
+      "marketing": {
+        "title": "Marketing Digital",
+        "desc": "Campagnes ciblées qui augmentent la visibilité, l’engagement et les conversions."
+      },
+      "cybersecurity": {
+        "title": "Cybersécurité",
+        "desc": "Protégez vos actifs numériques grâce à des solutions de sécurité avancées."
+      },
+      "network": {
+        "title": "Solutions Réseau",
+        "desc": "Conception, optimisation et maintenance de réseaux pour assurer la continuité de vos activités."
+      },
+      "data": {
+        "title": "Analyse de Données",
+        "desc": "Transformez vos données brutes en informations claires et exploitables pour de meilleures décisions."
+      },
+      "consulting": {
+        "title": "Consultation IT",
+        "desc": "Choisissez les technologies et stratégies adaptées pour faire avancer votre entreprise."
+      },
+      "insights": {
+        "title": "Perspectives Business",
+        "desc": "Des conseils d’experts alignés sur les tendances et opportunités mondiales."
+      },
+      "mobile": {
+        "title": "Développement Mobile",
+        "desc": "Applications mobiles rapides et engageantes pour iOS et Android."
+      },
+      "global": {
+        "title": "Présence Internationale",
+        "desc": "Solutions multilingues et multi-marchés pour élargir votre portée."
+      }
+    },
+    "cta": {
+      "title": "Rejoignez une équipe qui transforme les idées en impact",
+      "subtitle": "Que vous soyez un client à la recherche d’innovation ou un professionnel prêt à partager son expertise, nous créons des opportunités pour grandir, collaborer et réussir ensemble.",
+      "button": "Nous Rejoindre"
+    },
+    "faqs": {
+      "title": "FAQs",
+      "subtitle": "Répondez aux questions fréquentes en une phrase simple.",
+      "items": [
+        {
+          "q": "Quels services proposez-vous ?",
+          "a": "Nous proposons le développement web, le marketing, la cybersécurité, le réseau, l’analyse de données, la consultation et plus encore."
+        },
+        {
+          "q": "Comment puis-je commencer ?",
+          "a": "Contactez-nous avec les détails de votre projet et nous vous guiderons pour les prochaines étapes."
+        },
+        {
+          "q": "Combien coûtera mon projet ?",
+          "a": "Le prix dépend de l’ampleur et du délai. Nous vous fournirons un devis personnalisé après analyse de vos besoins."
+        }
+      ]
+    }
+  },
+
 
       
         "portfolio": {
@@ -264,7 +273,7 @@
     "title": "Contact",
     "info_title": "Informations de Contact",
     "address_label": "Adresse",
-    "address": "Puit Blain 12, PV, Haïti",
+    "address": " #10, Puits Blain 12, PV, Haïti",
     "phone_label": "Téléphone",
     "phone": "509 3344-3322",
     "email_label": "Email",
@@ -502,7 +511,7 @@
                 "sections": [
                   {
                     "title": "Canaux de support",
-                    "content": "Email : support@prowebsa.com\nTéléphone : [+1] XXX-XXX-XXXX\nHoraires : Lundi-Vendredi, 9h-18h EST"
+                    "content": "Email : support@prowebsa.com\nTéléphone : (+509) 4805-3333\nHoraires : Lundi-Vendredi, 9h-18h EST"
                   },
                   {
                     "title": "Délais de réponse",

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services avec Fond Réseau</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #0a192f;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    /* Canvas en arrière-plan */
+    #networkCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    /* Contenu au-dessus */
+    .container {
+      position: relative;
+      width: 900px;
+      height: 600px;
+      margin: auto;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+
+    .center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #38bdf8, #0a192f);
+      box-shadow: 0 0 40px rgba(56, 189, 248, 0.9);
+      animation: pulse 3s infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: translate(-50%, -50%) scale(1); }
+      50% { transform: translate(-50%, -50%) scale(1.1); }
+    }
+
+    .node {
+      position: absolute;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      border: 2px solid #38bdf8;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(56,189,248,0.7);
+      transition: transform 0.3s, box-shadow 0.3s;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(5px);
+      z-index: 2;
+    }
+
+    .node i {
+      font-size: 28px;
+      margin-bottom: 6px;
+    }
+
+    .node:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 35px rgba(56,189,248,1);
+    }
+
+    .cloud { top: 10%; left: 20%; }
+    .email { bottom: 10%; left: 20%; }
+    .server { bottom: 10%; right: 20%; }
+    .database { top: 10%; right: 20%; }
+    .monitor { top: 50%; left: 5%; transform: translateY(-50%); }
+    .tablet { top: 50%; right: 5%; transform: translateY(-50%); }
+  </style>
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Canvas réseau -->
+  <canvas id="networkCanvas"></canvas>
+
+  <!-- Schéma services -->
+  <div class="container">
+    <div class="center">NOS<br>SERVICES</div>
+
+    <div class="node cloud"><i class="fas fa-cloud"></i>Cloud</div>
+    <div class="node email"><i class="fas fa-envelope"></i>Email</div>
+    <div class="node server"><i class="fas fa-server"></i>Serveurs</div>
+    <div class="node database"><i class="fas fa-database"></i>Base<br>Données</div>
+    <div class="node monitor"><i class="fas fa-desktop"></i>Ordinateurs</div>
+    <div class="node tablet"><i class="fas fa-tablet-alt"></i>Mobiles</div>
+  </div>
+
+  <script>
+    // Animation spider network
+    const canvas = document.getElementById("networkCanvas");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let particles = [];
+
+    class Particle {
+      constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.dx = Math.random() * 1 - 0.5;
+        this.dy = Math.random() * 1 - 0.5;
+        this.radius = 2;
+      }
+
+      update() {
+        if (this.x < 0 || this.x > canvas.width) this.dx = -this.dx;
+        if (this.y < 0 || this.y > canvas.height) this.dy = -this.dy;
+        this.x += this.dx;
+        this.y += this.dy;
+        this.draw();
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = "#38bdf8";
+        ctx.fill();
+      }
+    }
+
+    function createParticles() {
+      for (let i = 0; i < 100; i++) {
+        let x = Math.random() * canvas.width;
+        let y = Math.random() * canvas.height;
+        particles.push(new Particle(x, y));
+      }
+    }
+
+    function connectParticles() {
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          let dist = Math.hypot(particles[i].x - particles[j].x, particles[i].y - particles[j].y);
+          if (dist < 150) {
+            ctx.strokeStyle = `rgba(56,189,248,${1 - dist / 150})`;
+            ctx.lineWidth = 0.5;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => p.update());
+      connectParticles();
+      requestAnimationFrame(animate);
+    }
+
+    createParticles();
+    animate();
+
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      particles = [];
+      createParticles();
+    });
+  </script>
+</body>
+</html>

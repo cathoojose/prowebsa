@@ -31,9 +31,9 @@
       "confidentiality": "Confidentiality",
       "faqs": "FAQS",
       "contact_info": "Contact Info",
-      "address": "Address: Puit blain #12, PV, Haiti",
-      "phone": "Phone: [+] XXX XXX",
-      "email": "Email:",
+      "address": "Address: #10, Puits Blain 12, PV, Haiti",
+      "phone": "Phone: (+509) 4805-3333",
+      "email": "Email : infos@prowebsa.com",
       "follow_us": "Follow us:",
       "socials": "Facebook | LinkedIn | Instagram | Twitter",
       "copyright": "Copyright © {{year}} Prowebsa. All rights reserved."
@@ -57,7 +57,7 @@
           "title": "Your Vision, Powered by Global Talent",
           "lines": [
             "Why limit your ideas to one location?",
-            "The world is full of innovators, creators, and problem-solvers ready to help you build something remarkable."
+            "The world is full of innovators, creators ready to help you build something remarkable."
           ]
         },
         "blocks": [
@@ -133,75 +133,83 @@
 
 
     
-      "servicesPage": {
-        "hero": {
-          "title": "Services",
-          "subtitle": "Explore our full range of services designed to boost your projects."
-        },
-        "sectionTitle": "Our Services",
-        "cards": {
-          "webDev": {
-            "title": "Web Development",
-            "desc": "Modern, responsive, and scalable websites tailored to your brand identity."
-          },
-          "marketing": {
-            "title": "Digital Marketing",
-            "desc": "Targeted campaigns that increase visibility, engagement, and conversions."
-          },
-          "cybersecurity": {
-            "title": "Cybersecurity",
-            "desc": "Protect your digital assets with advanced security solutions."
-          },
-          "network": {
-            "title": "Network Solutions",
-            "desc": "We design, optimize, and maintain networks to keep your operations running smoothly."
-          },
-          "data": {
-            "title": "Data Analysis",
-            "desc": "Turn raw data into clear, actionable insights for better decisions."
-          },
-          "consulting": {
-            "title": "IT Consultation",
-            "desc": "Choose the right technology and strategies to drive your business forward."
-          },
-          "insights": {
-            "title": "Business Insights",
-            "desc": "Expert advice aligned with global trends and opportunities."
-          },
-          "mobile": {
-            "title": "Mobile App Development",
-            "desc": "Fast, engaging mobile applications for iOS and Android."
-          },
-          "global": {
-            "title": "Global Presence",
-            "desc": "Multilingual and multi-market solutions to expand your reach."
-          },
-          "button": "Learn more"
-        },
-        "cta": {
-          "title": "Be part of a team that turns ideas into impact",
-          "subtitle": "Whether you’re a client seeking innovation or a professional ready to share your expertise, we create opportunities to grow, collaborate, and succeed together.",
-          "button": "Join Us"
-        },
-        "faqs": {
-          "title": "FAQs",
-          "subtitle": "Answer the frequently asked question in a simple sentence.",
-          "items": [
-            {
-              "q": "What services do you offer?",
-              "a": "We offer web development, marketing, cybersecurity, networking, analytics, consulting, and more."
-            },
-            {
-              "q": "How do I get started?",
-              "a": "Contact us with your project details and we will guide you through the next steps."
-            },
-            {
-              "q": "How much will my project cost?",
-              "a": "Pricing depends on scope and timeline. We will provide a tailored quote after understanding your needs."
-            }
-          ]
-        }
+  "servicesPage": {
+    "hero": {
+      "title": "Services",
+      "subtitle": "Explore our full range of services designed to boost your projects."
+    },
+    "sectionTitle": "Our Services",
+    "nodes": {
+      "cloud": "Cloud",
+      "email": "Email",
+      "server": "Servers",
+      "database": "Database",
+      "monitor": "Web Design",
+      "tablet": "Mobiles"
+    },
+    "cards": {
+      "webDev": {
+        "title": "Web Development",
+        "desc": "Modern, responsive, and scalable websites tailored to your brand identity."
       },
+      "marketing": {
+        "title": "Digital Marketing",
+        "desc": "Targeted campaigns that increase visibility, engagement, and conversions."
+      },
+      "cybersecurity": {
+        "title": "Cybersecurity",
+        "desc": "Protect your digital assets with advanced security solutions."
+      },
+      "network": {
+        "title": "Network Solutions",
+        "desc": "We design, optimize, and maintain networks to keep your operations running smoothly."
+      },
+      "data": {
+        "title": "Data Analysis",
+        "desc": "Turn raw data into clear, actionable insights for better decisions."
+      },
+      "consulting": {
+        "title": "IT Consultation",
+        "desc": "Choose the right technology and strategies to drive your business forward."
+      },
+      "insights": {
+        "title": "Business Insights",
+        "desc": "Expert advice aligned with global trends and opportunities."
+      },
+      "mobile": {
+        "title": "Mobile App Development",
+        "desc": "Fast, engaging mobile applications for iOS and Android."
+      },
+      "global": {
+        "title": "Global Presence",
+        "desc": "Multilingual and multi-market solutions to expand your reach."
+      }
+    },
+    "cta": {
+      "title": "Be part of a team that turns ideas into impact",
+      "subtitle": "Whether you’re a client seeking innovation or a professional ready to share your expertise, we create opportunities to grow, collaborate, and succeed together.",
+      "button": "Join Us"
+    },
+    "faqs": {
+      "title": "FAQs",
+      "subtitle": "Answer the frequently asked question in a simple sentence.",
+      "items": [
+        {
+          "q": "What services do you offer?",
+          "a": "We offer web development, marketing, cybersecurity, networking, analytics, consulting, and more."
+        },
+        {
+          "q": "How do I get started?",
+          "a": "Contact us with your project details and we will guide you through the next steps."
+        },
+        {
+          "q": "How much will my project cost?",
+          "a": "Pricing depends on scope and timeline. We will provide a tailored quote after understanding your needs."
+        }
+      ]
+    }
+  },
+
 
       
 
@@ -209,7 +217,7 @@
           "title": "Contact",
           "info_title": "Contact Information",
           "address_label": "Address",
-          "address": "Puit Blain 12, PV, Haiti",
+          "address": "#10, Puits Blain 12, PV, Haïti",
           "phone_label": "Phone",
           "phone": "509 3344-3322",
           "email_label": "Email",
@@ -283,9 +291,9 @@
                 "home": "Home",
                 "current": "Careers"
               },
-              "title": "Careers at PRowebsa",
-              "description": "Join our team of passionate tech professionals dedicated to delivering innovative digital solutions. At PRowebsa, we believe in fostering talent, encouraging innovation, and creating an environment where great ideas thrive.",
-              "why_work": "Why Work at PRowebsa?",
+              "title": "Careers at PROWEBSA",
+              "description": "Join our team of passionate tech professionals dedicated to delivering innovative digital solutions. At PROWEBSA, we believe in fostering talent, encouraging innovation, and creating an environment where great ideas thrive.",
+              "why_work": "Why Work at PROWEBSA?",
               "cards": {
                 "innovative_projects": {
                   "title": "Innovative Projects",
@@ -365,7 +373,7 @@
                     "current": "Customer Success"
                   },
                   "title": "Customer Success",
-                  "description": "At PRowebsa, your success is our success. We measure our performance by the results we deliver to our clients and the long-term relationships we build.",
+                  "description": "At PROWEBSA, your success is our success. We measure our performance by the results we deliver to our clients and the long-term relationships we build.",
                   "section_title": "Our Approach to Customer Success",
                   "cards": {
                     "account_management": {
@@ -402,8 +410,8 @@
                         "title": "General Questions",
                         "questions": [
                           {
-                            "question": "What services does PRowebsa offer?",
-                            "answer": "PRowebsa offers a comprehensive range of digital services including web development, mobile app development, cybersecurity solutions, network setup and management, data analysis, and IT consulting. We provide end-to-end solutions tailored to your business needs."
+                            "question": "What services does PROWEBSA offer?",
+                            "answer": "PROWEBSA offers a comprehensive range of digital services including web development, mobile app development, cybersecurity solutions, network setup and management, data analysis, and IT consulting. We provide end-to-end solutions tailored to your business needs."
                           },
                           {
                             "question": "How long does a typical project take?",
@@ -500,7 +508,7 @@
                       "sections": [
                         {
                           "title": "Support Channels",
-                          "content": "Email: support@prowebsa.com\nPhone: [+1] XXX-XXX-XXXX\nHours: Monday-Friday, 9am-6pm EST"
+                          "content": "Email: support@prowebsa.com\nPhone: (+509) 4805-3333\nHours: Monday-Friday, 9am-6pm EST"
                         },
                         {
                           "title": "Response Times",
@@ -517,10 +525,10 @@
                       "howItWorks": {
                         "breadcrumb": {
                           "home": "Home",
-                          "current": "How Prowebsa Works"
+                          "current": "How PROWEBSA Works"
                         },
-                        "title": "How Prowebsa Works",
-                        "description": "At PRowebsa, we follow a streamlined process to ensure your project's success from conception to deployment and beyond.",
+                        "title": "How PROWEBSA Works",
+                        "description": "At PROWEBSA, we follow a streamlined process to ensure your project's success from conception to deployment and beyond.",
                         "process": [
                           {
                             "step": "Discovery & Consultation",
@@ -590,7 +598,7 @@
                               "current": "Quality Guide"
                             },
                             "title": "Quality Guide",
-                            "description": "At PRowebsa, quality isn't just a step in our process—it's embedded in everything we do. Our comprehensive quality assurance framework ensures that we deliver exceptional solutions that exceed expectations.",
+                            "description": "At PROWEBSA, quality isn't just a step in our process—it's embedded in everything we do. Our comprehensive quality assurance framework ensures that we deliver exceptional solutions that exceed expectations.",
                             "standardsTitle": "Our Quality Standards",
                             "standards": [
                               {
@@ -673,11 +681,10 @@
                                   "current": "Terms of Service"
                                 },
                                 "title": "Terms of Service",
-                                "effectiveDate": "Effective Date: [Insert Date]",
                                 "sections": [
                                   {
                                     "title": "1. Introduction",
-                                    "content": "PRowebsa (\"we,\" \"us,\" \"our\") provides web development, mobile applications, cybersecurity, and IT consulting services. These Terms govern your use of our services."
+                                    "content": "PROWEBSA (\"we,\" \"us,\" \"our\") provides web development, mobile applications, cybersecurity, and IT consulting services. These Terms govern your use of our services."
                                   },
                                   {
                                     "title": "2. Services",
@@ -709,7 +716,7 @@
                                     "current": "Trust & Safety"
                                   },
                                   "title": "Trust & Safety",
-                                  "intro": "At PRowebsa, we prioritize the security and integrity of our clients' data and digital assets. Our comprehensive trust and safety protocols ensure your peace of mind throughout our engagement.",
+                                  "intro": "At PROWEBSA, we prioritize the security and integrity of our clients' data and digital assets. Our comprehensive trust and safety protocols ensure your peace of mind throughout our engagement.",
                                   "securityMeasuresTitle": "Our Security Measures",
                                   "securityMeasures": [
                                     {

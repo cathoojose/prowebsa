@@ -21,9 +21,7 @@ function TermsPage() {
       </Typography>
 
       <Paper elevation={2} sx={{ p: 4 }}>
-        <Typography variant="h6" gutterBottom sx={{ fontWeight: 600 }}>
-          {t('terms.effectiveDate')}
-        </Typography>
+       
 
         {sections.map((section, index) => (
           <Box key={index} sx={{ mt: 3 }}>

@@ -43,7 +43,7 @@ export default function Portfolio() {
       <PortfolioSections portfolioItems={portfolioItems} categories={categories} />
 
       {/* Insights */}
-      <Box component="section" sx={{ py: { xs: 8, md: 6 } }}>
+      {/* <Box component="section" sx={{ py: { xs: 8, md: 6 } }}>
         <Container maxWidth="lg">
           <Box sx={{ bgcolor: "#f8f5f5", borderRadius: 3, p: { xs: 4, md: 4 }, boxShadow: 1 }}>
             <Typography variant="h5" fontWeight={800} sx={{ mb: 3, color: "primary.main" }}>
@@ -68,12 +68,13 @@ export default function Portfolio() {
             </Grid>
           </Box>
         </Container>
-      </Box>
+      </Box> */}
+      
 
       {/* FAQs */}
-      <Box component="section" sx={{ pb: { xs: 8, md: 6 } }}>
+      <Box component="section" sx={{ py: { xs: 8, md: 8 } }}>
         <Container maxWidth="lg">
-          <Accordion defaultExpanded sx={{ mb: 2 }}>
+          <Accordion defaultExpanded sx={{ mb: 6 }}>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
               <Typography variant="h5" fontWeight={800} color="primary.main">
                 {t("portfolio.sections.faqsTitle")}
@@ -82,7 +83,7 @@ export default function Portfolio() {
           </Accordion>
 
           {faqs.map((f, i) => (
-            <Accordion key={i} disableGutters sx={{ mb: 1 }}>
+            <Accordion key={i} disableGutters sx={{ mb: 1}}>
               <AccordionSummary expandIcon={<ExpandMoreIcon />} sx={{ bgcolor: i % 2 === 0 ? '#f9f9f9' : 'white' }}>
                 <Typography variant="body1" fontWeight={500}>
                   {i + 1}. {f.q}
@@ -145,8 +146,8 @@ function PortfolioSections({ portfolioItems, categories }) {
   return (
     <Box component="section" sx={{ pt: { xs: 8, md: 6 }, pb: 4 }}>
       <Container maxWidth="lg">
-        <CategoryNav categories={categories} />
-        <Typography variant="h6" fontWeight={900} sx={{ mt: 3, mb: 3, color: "primary.main" }}>
+        {/* <CategoryNav categories={categories} /> */}
+        <Typography variant="h6" fontWeight={900} sx={{ mt: 8, mb: 3, color: "primary.main" }}>
           {t("portfolio.sections.webDevelopment")}
         </Typography>
 
@@ -183,7 +184,7 @@ function PortfolioSections({ portfolioItems, categories }) {
 }
 
 /* ===================== CATEGORY NAV ===================== */
-function CategoryNav({ categories }) {
+/*function CategoryNav({ categories }) {
   const [activeCategory, setActiveCategory] = useState(0);
 
   return (
@@ -205,7 +206,7 @@ function CategoryNav({ categories }) {
       ))}
     </Box>
   );
-}
+}*/
 
 /* ===================== PORTFOLIO CARD ===================== */
 function PortfolioCard({ item, idx, image, link, onLearnMore }) {
@@ -234,7 +235,7 @@ function PortfolioCard({ item, idx, image, link, onLearnMore }) {
         image={image}
         alt={item.title}
         sx={{ 
-          height: { xs: 200, sm: 220, md: 200 },
+          height: { xs: 200, sm: 220, md: 400 },
           objectFit: "cover" 
         }}
       />

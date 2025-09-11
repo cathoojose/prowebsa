@@ -10,8 +10,8 @@ export default function Footer() {
     <Box
       component="footer"
       sx={{
-        bgcolor: '#0d5ca7',
-        color: 'common.white',
+        bgcolor: '#e7e7e748',
+        color: 'bleuFrance',
         mt: 'auto',
         pt: 6,
         pb: 3,
@@ -67,13 +67,10 @@ export default function Footer() {
             </Typography>
             <FooterText>{t("footer.address")}</FooterText>
             <FooterText>{t("footer.phone")}</FooterText>
-            <FooterText>{t("footer.email")}</FooterText>
-            <FooterLink href="mailto:infos@prowebsa.com">
-              infos@prowebsa.com
-            </FooterLink>
+            <FooterText>{t("footer.email")}</FooterText>              
             <Box sx={{ mt: 2 }}>
-              <FooterText>{t("footer.follow_us")}</FooterText>
-              <FooterText>{t("footer.socials")}</FooterText>
+              {/* <FooterText>{t("footer.follow_us")}</FooterText> */}
+              {/* <FooterText>{t("footer.socials")}</FooterText> */}
             </Box>
           </Grid>
         </Grid>
@@ -124,7 +121,7 @@ function FooterLink({ children, to, href }) {
         lineHeight: 1.6,
         cursor: 'pointer',
         '&:hover': {
-          color: 'rgba(255, 255, 255, 0.8)',
+          color: ' #ff5600',
         },
       }}
     >
@@ -142,7 +139,7 @@ function FooterLink({ children, to, href }) {
         lineHeight: 1.6,
         cursor: 'pointer',
         '&:hover': {
-          color: 'rgba(255, 255, 255, 0.8)',
+          color: ' #ff5600',
         },
       }}
     >

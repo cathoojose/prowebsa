@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; 
+import React, { useState, useEffect } from 'react'; 
 import { 
   AppBar, 
   Toolbar, 
@@ -20,13 +20,12 @@ import MenuIcon from '@mui/icons-material/Menu';
 import TranslateIcon from '@mui/icons-material/Translate';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import logo from "../assets/logos/prowebsa.png"; // chemin vers ton logo
+import logo from "../assets/logos/prowebsa.png";
 
 // Fonction pour masquer la navbar au défilement
 function HideOnScroll(props) {
   const { children } = props;
   const trigger = useScrollTrigger();
-
   return (
     <Slide appear={false} direction="down" in={!trigger}>
       {children}
@@ -37,35 +36,40 @@ function HideOnScroll(props) {
 export default function Navbar(props) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [languageAnchor, setLanguageAnchor] = useState(null);
+  const [scrollUp, setScrollUp] = useState(false);
+  const [atTop, setAtTop] = useState(true); // nouveau état pour détecter si on est en haut
   const location = useLocation();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
 
-  // Déterminer si nous sommes sur une page avec bannière
-  const hasBanner = () => {
-    const bannerPaths = ['/', '/services', '/contact', '/about', '/portfolio'];
-    return bannerPaths.includes(location.pathname);
-  };
+  // Détecter la direction du scroll et si on est en haut
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
 
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
+    const handleScroll = () => {
+      if (window.scrollY === 0) {
+        setAtTop(true);
+        setScrollUp(false);
+      } else {
+        setAtTop(false);
+        setScrollUp(window.scrollY < lastScrollY); // true si scroll vers le haut
+      }
+      lastScrollY = window.scrollY;
+    };
 
-  const handleLanguageMenu = (event) => {
-    setLanguageAnchor(event.currentTarget);
-  };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-  const handleLanguageClose = () => {
-    setLanguageAnchor(null);
-  };
+  const hasBanner = () => ['/', '/services', '/contact', '/about'].includes(location.pathname);
+  const isPortfolioPage = () => location.pathname === '/portfolio';
 
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-    handleLanguageClose();
-  };
+  const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
+  const handleLanguageMenu = (event) => setLanguageAnchor(event.currentTarget);
+  const handleLanguageClose = () => setLanguageAnchor(null);
+  const changeLanguage = (lng) => { i18n.changeLanguage(lng); handleLanguageClose(); };
 
-  // Items de navigation
   const navItems = [
     { text: 'Services', path: '/services' },
     { text: 'À propos', path: '/about' },
@@ -73,15 +77,19 @@ export default function Navbar(props) {
     { text: 'Contact', path: '/contact' },
   ];
 
+  // Déterminer la couleur du texte
+  const getTextColor = () => {
+    if (isPortfolioPage()) return 'black'; // Portfolio toujours noir
+    if (scrollUp) return 'black';          // Scroll up → noir
+    if (atTop && hasBanner()) return 'white'; // En haut et page avec bannière → blanc
+    if (hasBanner()) return 'white';       // par défaut pages avec bannière
+    return 'black';                        // autres pages
+  };
+
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <RouterLink to="/">
-        <Box
-          component="img"
-          src={logo}
-          alt="Logo"
-          sx={{ height: 50, my: 2 }}
-        />
+        <Box component="img" src={logo} alt="Logo" sx={{ height: 50, my: 2 }} />
       </RouterLink>
       <List>
         {navItems.map((item) => (
@@ -90,46 +98,22 @@ export default function Navbar(props) {
             component={RouterLink} 
             to={item.path}
             sx={{ 
-              color: hasBanner() ? 'white' : 'black',
-              textShadow: hasBanner() ? '0px 2px 4px rgba(0,0,0,0.8)' : 'none',
+              color: getTextColor(),
               justifyContent: 'center',
-              '&:hover': {
-                backgroundColor: 'rgba(255, 166, 0, 0.45)',
-              }
+              '&:hover': { backgroundColor: 'rgba(255, 165, 0, 0.2)' }
             }}
           >
-            <ListItemText 
-              primary={item.text} 
-              sx={{
-                textAlign: 'center',
-                '& span': {
-                  fontWeight: hasBanner() ? 600 : 600
-                }
-              }}
-            />
+            <ListItemText primary={item.text} />
           </ListItem>
         ))}
-        {/* Bouton de langue dans le drawer mobile */}
+
         <ListItem 
           onClick={handleLanguageMenu}
-          sx={{ 
-            color: hasBanner() ? 'white' : 'black',
-            textShadow: hasBanner() ? '0px 2px 4px rgba(0,0,0,0.8)' : 'none',
-            justifyContent: 'center',
-            cursor: 'pointer',
-            '&:hover': {
-              backgroundColor: 'rgba(255, 165, 0, 0.2)',
-            }
-          }}
+          sx={{ color: getTextColor(), justifyContent: 'center', cursor: 'pointer' }}
         >
           <ListItemText 
             primary={i18n.language === 'fr' ? 'Français' : 'English'} 
-            sx={{
-              textAlign: 'center',
-              '& span': {
-                fontWeight: hasBanner() ? 600 : 400
-              }
-            }}
+            sx={{ textAlign: 'center' }}
           />
         </ListItem>
       </List>
@@ -142,38 +126,22 @@ export default function Navbar(props) {
         <AppBar 
           component="nav" 
           sx={{ 
-            backgroundColor: hasBanner() ? 'rgba(255,255,255,0.14)' : 'white', 
-            boxShadow: hasBanner() ? '0 10px 30px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.25)' : 'none',
-            color: hasBanner() ? 'white' : 'black',
+            backgroundColor: isPortfolioPage() ? 'white' : (hasBanner() ? 'rgba(255,255,255,0.14)' : 'white'), 
+            boxShadow: hasBanner() && !isPortfolioPage() ? '0 10px 30px rgba(0,0,0,0.08)' : 'none',
             transition: 'all 0.3s ease',
             position: 'fixed',
             top: 0,
             left: 0,
             right: 0,
             zIndex: 1100,
-            backdropFilter: hasBanner() ? 'blur(10px)' : 'none',
-            WebkitBackdropFilter: hasBanner() ? 'blur(10px)' : 'none',
-            borderBottom: hasBanner() ? '1px solid rgba(255,255,255,0.35)' : 'none'
+            backdropFilter: hasBanner() && !isPortfolioPage() ? 'blur(10px)' : 'none'
           }}
         >
           <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
-            
-            {/* Logo à gauche avec lien vers la homepage */}
             <RouterLink to="/">
-              <Box
-                component="img"
-                src={logo}
-                alt="Logo"
-                sx={{
-                  height: 70,       // fixe la hauteur
-                  width: "150px",    // conserve les proportions
-                  mr: 2,
-                  mt: 2,
-                }}
-              />
+              <Box component="img" src={logo} alt="Logo" sx={{ height: 70, width: "150px", mr: 2, mt: 2 }} />
             </RouterLink>
 
-            {/* Menu à droite */}
             <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center' }}>
               {navItems.map((item) => (
                 <Button
@@ -181,98 +149,58 @@ export default function Navbar(props) {
                   component={RouterLink}
                   to={item.path}
                   sx={{ 
-                    color: 'inherit',
+                    color: getTextColor(),
                     mx: 1,
-                    textShadow: hasBanner() ? '0px 2px 4px rgba(0,0,0,0.8)' : 'none',
-                    fontWeight: hasBanner() ? 600 : 400,
-                    '&:hover': {
-                      color: 'orange',
-                      backgroundColor: 'transparent'
-                    }
+                    fontWeight: 600,
+                    '&:hover': { color: 'orange', backgroundColor: 'transparent' }
                   }}
                 >
                   {item.text}
                 </Button>
               ))}
-              
-              {/* Bouton de langue pour desktop */}
+
               <Button
                 onClick={handleLanguageMenu}
-                sx={{ 
-                  color: 'inherit',
-                  mx: 1,
-                  textShadow: hasBanner() ? '0px 2px 4px rgba(0,0,0,0.8)' : 'none',
-                  fontWeight: hasBanner() ? 600 : 400,
-                  minWidth: 'auto',
-                  '&:hover': {
-                    color: 'orange',
-                    backgroundColor: 'transparent'
-                  }
-                }}
+                sx={{ color: getTextColor(), mx: 1, fontWeight: 600, minWidth: 'auto' }}
               >
                 <TranslateIcon sx={{ mr: 0.5 }} />
                 {i18n.language.toUpperCase()}
               </Button>
             </Box>
 
-            {/* Bouton menu mobile */}
             <IconButton
-              color="inherit"
               aria-label="open drawer"
               edge="start"
               onClick={handleDrawerToggle}
-              sx={{ 
-                ml: 'auto',
-                display: { md: 'none' },
-                color: hasBanner() ? 'white' : 'black',
-                textShadow: hasBanner() ? '0px 2px 4px rgba(0,0,0,0.8)' : 'none'
-              }}
+              sx={{ ml: 'auto', display: { md: 'none' }, color: getTextColor() }}
             >
               <MenuIcon />
             </IconButton>
           </Toolbar>
         </AppBar>
       </HideOnScroll>
-      
-      {/* Menu de sélection de langue */}
+
       <Menu
         anchorEl={languageAnchor}
         open={Boolean(languageAnchor)}
         onClose={handleLanguageClose}
       >
-        <MenuItem onClick={() => changeLanguage('fr')} selected={i18n.language === 'fr'}>
-          Français
-        </MenuItem>
-        <MenuItem onClick={() => changeLanguage('en')} selected={i18n.language === 'en'}>
-          English
-        </MenuItem>
+        <MenuItem onClick={() => changeLanguage('fr')} selected={i18n.language === 'fr'}>Français</MenuItem>
+        <MenuItem onClick={() => changeLanguage('en')} selected={i18n.language === 'en'}>English</MenuItem>
       </Menu>
-      
-      {/* Drawer mobile */}
+
       <Box component="nav">
         <Drawer
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true,
-          }}
-          sx={{
-            display: { xs: 'block', md: 'none' },
-            '& .MuiDrawer-paper': { 
-              boxSizing: 'border-box', 
-              width: 240,
-              backgroundColor: hasBanner() ? 'rgba(0, 0, 0, 0.8)' : 'white',
-              color: hasBanner() ? 'white' : 'black',
-              backdropFilter: hasBanner() ? 'blur(10px)' : 'none'
-            },
-          }}
+          ModalProps={{ keepMounted: true }}
+          sx={{ display: { xs: 'block', md: 'none' }, '& .MuiDrawer-paper': { width: 240 } }}
         >
           {drawer}
         </Drawer>
       </Box>
-      
-      {/* Espace pour la navbar fixe uniquement quand pas de bannière */}
+
       {!hasBanner() && <Toolbar />}
     </>
   );

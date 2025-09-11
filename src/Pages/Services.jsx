@@ -1,39 +1,30 @@
-import Container from '@mui/material/Container'
-import Box from '@mui/material/Box'
-import Typography from '@mui/material/Typography'
-import Card from '@mui/material/Card'
-import CardContent from '@mui/material/CardContent'
-import Button from '@mui/material/Button'
-import Accordion from '@mui/material/Accordion'
-import AccordionSummary from '@mui/material/AccordionSummary'
-import AccordionDetails from '@mui/material/AccordionDetails'
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
-// Removed Accordion imports for a cleaner static FAQ layout
-import { Link as RouterLink } from 'react-router-dom'
-import { useTranslation } from "react-i18next"
+import React, { useEffect, useRef } from 'react';
+import Container from '@mui/material/Container';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Button from '@mui/material/Button';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { Link as RouterLink } from 'react-router-dom';
+import { useTranslation } from "react-i18next";
 
-import CodeIcon from '@mui/icons-material/Code'
-import LanguageIcon from '@mui/icons-material/Language'
-import CampaignIcon from '@mui/icons-material/Campaign'
-import SecurityIcon from '@mui/icons-material/Security'
-import LanIcon from '@mui/icons-material/Lan'
-import TimelineIcon from '@mui/icons-material/Timeline'
-import SupportAgentIcon from '@mui/icons-material/SupportAgent'
-import InsightsIcon from '@mui/icons-material/Insights'
-import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone'
-
-// Removed static hero image in favor of animated background
+import CodeIcon from '@mui/icons-material/Code';
+import LanguageIcon from '@mui/icons-material/Language';
+import CampaignIcon from '@mui/icons-material/Campaign';
+import SecurityIcon from '@mui/icons-material/Security';
+import LanIcon from '@mui/icons-material/Lan';
+import TimelineIcon from '@mui/icons-material/Timeline';
+import SupportAgentIcon from '@mui/icons-material/SupportAgent';
+import InsightsIcon from '@mui/icons-material/Insights';
+import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 
 export default function Services() {
-  const { t } = useTranslation()
-
-  const titleOrangeGradientStyle = {
-    background: 'linear-gradient(90deg, rgba(255, 150, 80, 1) 0%, rgba(255,120,50,1) 50%, rgba(255,170,110,1) 100%)',
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-    backgroundClip: 'text',
-    color: 'transparent'
-  }
+  const { t } = useTranslation();
+  const canvasRef = useRef(null);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -41,6 +32,86 @@ export default function Services() {
       behavior: 'smooth'
     });
   };
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext("2d");
+    
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+    
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    let particles = [];
+
+    class Particle {
+      constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.dx = Math.random() * 1 - 0.5;
+        this.dy = Math.random() * 1 - 0.5;
+        this.radius = 2;
+      }
+
+      update() {
+        if (this.x < 0 || this.x > canvas.width) this.dx = -this.dx;
+        if (this.y < 0 || this.y > canvas.height) this.dy = -this.dy;
+        this.x += this.dx;
+        this.y += this.dy;
+        this.draw();
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = "#38bdf8";
+        ctx.fill();
+      }
+    }
+
+    function createParticles() {
+      for (let i = 0; i < 100; i++) {
+        let x = Math.random() * canvas.width;
+        let y = Math.random() * canvas.height;
+        particles.push(new Particle(x, y));
+      }
+    }
+
+    function connectParticles() {
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          let dist = Math.hypot(particles[i].x - particles[j].x, particles[i].y - particles[j].y);
+          if (dist < 150) {
+            ctx.strokeStyle = `rgba(56,189,248,${1 - dist / 150})`;
+            ctx.lineWidth = 0.5;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => p.update());
+      connectParticles();
+      requestAnimationFrame(animate);
+    }
+
+    createParticles();
+    animate();
+    
+    return () => {
+      window.removeEventListener('resize', resizeCanvas);
+    };
+  }, []);
 
   const services = [
     { key: 'webDev', icon: <CodeIcon fontSize="large" /> },
@@ -52,119 +123,137 @@ export default function Services() {
     { key: 'insights', icon: <InsightsIcon fontSize="large" /> },
     { key: 'mobile', icon: <PhoneIphoneIcon fontSize="large" /> },
     { key: 'global', icon: <LanguageIcon fontSize="large" /> },
-  ]
+  ];
 
-  const faqs = t("servicesPage.faqs.items", { returnObjects: true })
+  const faqs = t("servicesPage.faqs.items", { returnObjects: true });
+
+  const nodes = [
+    { className: 'cloud', top: '10%', left: '20%', icon: '☁️', text: t("servicesPage.nodes.cloud") },
+    { className: 'email', bottom: '10%', left: '20%', icon: '✉️', text: t("servicesPage.nodes.email") },
+    { className: 'server', bottom: '10%', right: '20%', icon: '🖥️', text: t("servicesPage.nodes.server") },
+    { className: 'database', top: '10%', right: '20%', icon: '💾', text: t("servicesPage.nodes.database") },
+    { className: 'monitor', top: '50%', left: '5%', icon: '💻', text: t("servicesPage.nodes.monitor") },
+    { className: 'tablet', top: '50%', right: '5%', icon: '📱', text: t("servicesPage.nodes.tablet") }
+  ];
 
   return (
     <>
-      {/* Hero */}
+      {/* Hero avec animation en arrière-plan */}
       <Box
         component="section"
         sx={{
           position: 'relative',
-          minHeight: { xs: 360, md: 460 },
+          minHeight: '100vh',
           display: 'flex',
           alignItems: 'center',
+          justifyContent: 'center',
           overflow: 'hidden',
-          background: `radial-gradient(1000px 700px at 70% 0%,rgb(46, 25, 9), rgba(43, 24, 11, 0.4) 60%),
-                        radial-gradient(800px 500px at 0% 20%, #120a05, rgba(18,10,5,0.2) 60%),
-                        linear-gradient(180deg, #0e0906 0%, #140c07 60%, #0e0906 100%)`,
+          backgroundColor: '#0a192f',
         }}
       >
-        {/* Orange bubbles animation layer */}
+        <canvas
+          ref={canvasRef}
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            zIndex: 0,
+          }}
+        />
+        
+        {/* Nœuds du réseau */}
         <Box
           sx={{
             position: 'absolute',
-            inset: 0,
-            overflow: 'hidden',
-            pointerEvents: 'none',
-            '&::before, &::after': {
-              content: '""',
-              position: 'absolute',
-              borderRadius: '50%',
-              filter: 'blur(8px)',
-              background: 'radial-gradient(circle at 30% 30%, rgba(255, 120, 50, 0.55), rgba(255, 86, 0, 0) 60%)',
-              width: 300,
-              height: 300,
-              animation: 'floatY 9s ease-in-out infinite',
-              boxShadow: 'inset -20px -30px 60px rgba(0,0,0,0.25), 0 20px 40px rgba(0,0,0,0.35)'
-            },
-            '&::before': { top: -60, left: -40, animationDelay: '0s' },
-            '&::after': {
-              bottom: -100, right: -80,
-              background: 'radial-gradient(circle at 70% 70%, rgba(255, 140, 70, 0.5), rgba(255, 86, 0, 0) 60%)',
-              width: 380, height: 380, animationDelay: '3s'
-            },
-            '@keyframes floatY': {
-              '0%, 100%': { transform: 'translateY(0) scale(1)' },
-              '50%': { transform: 'translateY(-18px) scale(1.05)' }
-            }
+            width: { xs: '100%', md: '900px' },
+            height: { xs: '400px', md: '600px' },
+            margin: 'auto',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            zIndex: 1,
           }}
-        />
-        {/* Additional depth bubbles */}
-        <Box sx={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
-          <Box sx={{
-            position: 'absolute', top: 50, left: 70, width: 120, height: 120, borderRadius: '50%',
-            background: 'radial-gradient( circle at 35% 35%, rgba(255, 150, 80, 0.6), rgba(255, 86, 0, 0) 65% )',
-            filter: 'blur(2px)', animation: 'floatX 12s ease-in-out infinite',
-            boxShadow: 'inset -10px -20px 40px rgba(0,0,0,0.25), 0 10px 20px rgba(0,0,0,0.25)'
-          }} />
-          <Box sx={{
-            position: 'absolute', top: 110, left: 160, width: 80, height: 80, borderRadius: '50%',
-            background: 'radial-gradient( circle at 35% 35%, rgba(255, 160, 100, 0.5), rgba(255, 86, 0, 0) 65% )',
-            filter: 'blur(1px)', animation: 'floatX 14s ease-in-out -2s infinite',
-            boxShadow: 'inset -8px -16px 32px rgba(0,0,0,0.25), 0 8px 16px rgba(0,0,0,0.25)'
-          }} />
-          <Box sx={{
-            position: 'absolute,', top: 180, right: 120, width: 170, height: 170, borderRadius: '50%',
-            background: 'radial-gradient( circle at 35% 35%, rgba(255, 140, 70, 0.55), rgba(255, 86, 0, 0) 60% )',
-            filter: 'blur(3px)', animation: 'floatX 16s ease-in-out -4s infinite',
-            boxShadow: 'inset -14px -24px 48px rgba(0,0,0,0.28), 0 14px 28px rgba(0,0,0,0.28)'
-          }} />
-          <Box sx={{
-            position: 'absolute', bottom: 50, right: 50, width: 110, height: 110, borderRadius: '50%',
-            background: 'radial-gradient( circle at 35% 35%, rgba(255, 170, 110, 0.55), rgba(255, 86, 0, 0) 60% )',
-            filter: 'blur(2px)', animation: 'floatX 18s ease-in-out -6s infinite',
-            boxShadow: 'inset -10px -20px 40px rgba(0,0,0,0.25), 0 10px 20px rgba(0,0,0,0.25)'
-          }} />
-          <Box sx={{
-            position: 'absolute', bottom: 120, right: 90, width: 160, height: 160, borderRadius: '50%',
-            background: 'radial-gradient( circle at 35% 35%, rgba(255, 170, 110, 0.55), rgba(255, 86, 0, 0) 60% )',
-            filter: 'blur(2px)', animation: 'floatX 18s ease-in-out -6s infinite',
-            boxShadow: 'inset -10px -20px 40px rgba(0,0,0,0.25), 0 10px 20px rgba(0,0,0,0.25)'
-          }} />
-          <Box sx={{
-            '@keyframes floatX': {
-              '0%, 100%': { transform: 'translateX(0) translateY(0)' },
-              '50%': { transform: 'translateX(18px) translateY(-10px)' }
-            }
-          }} />
-        </Box>
-        <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
-          <Typography variant="h3" fontWeight={900} sx={{ textAlign: 'center', ...titleOrangeGradientStyle }}>
-            {t("servicesPage.hero.title")}
-          </Typography>
-          <Typography
-            variant="h6"
-            sx={{ color: 'common.white', maxWidth: 900, mx: 'auto', mt: 1.5 }}
+        >
+          <Box
+            sx={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              width: '180px',
+              height: '180px',
+              borderRadius: '50%',
+              background: 'radial-gradient(circle, #38bdf8, #0a192f)',
+              boxShadow: '0 0 40px rgba(56, 189, 248, 0.9)',
+              animation: 'pulse 3s infinite',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              textAlign: 'center',
+              fontWeight: 'bold',
+              fontSize: '20px',
+              color: 'white',
+              '@keyframes pulse': {
+                '0%, 100%': { transform: 'translate(-50%, -50%) scale(1)' },
+                '50%': { transform: 'translate(-50%, -50%) scale(1.1)' }
+              }
+            }}
           >
-            {t("servicesPage.hero.subtitle")}
-          </Typography>
-        </Container>
+            {t("servicesPage.hero.title")}
+          </Box>
+
+          {/* Les nœuds */}
+          {nodes.map((node, index) => (
+            <Box
+              key={index}
+              sx={{
+                position: 'absolute',
+                width: '110px',
+                height: '110px',
+                borderRadius: '50%',
+                border: '2px solid #38bdf8',
+                display: { xs: 'none', md: 'flex' },
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                color: 'white',
+                fontSize: '14px',
+                fontWeight: 'bold',
+                textAlign: 'center',
+                boxShadow: '0 0 20px rgba(56,189,248,0.7)',
+                transition: 'transform 0.3s, box-shadow 0.3s',
+                background: 'rgba(255, 255, 255, 0.05)',
+                backdropFilter: 'blur(5px)',
+                zIndex: 2,
+                [node.top ? 'top' : 'bottom']: node.top || node.bottom,
+                [node.left ? 'left' : 'right']: node.left || node.right,
+                transform: node.className.includes('monitor') || node.className.includes('tablet') 
+                  ? 'translateY(-50%)' 
+                  : 'none',
+                '&:hover': {
+                  transform: (node.className.includes('monitor') || node.className.includes('tablet') 
+                    ? 'translateY(-50%) scale(1.2)' 
+                    : 'scale(1.2)'),
+                  boxShadow: '0 0 35px rgba(56,189,248,1)'
+                }
+              }}
+            >
+              <Box sx={{ fontSize: '28px', marginBottom: '6px' }}>{node.icon}</Box>
+              {node.text}
+            </Box>
+          ))}
+        </Box>
       </Box>
 
       {/* Services Grid */}
       <Box component="section" sx={{ py: { xs: 6, md: 10 } }}>
         <Container maxWidth="lg">
-          <Typography variant="h4" fontWeight={900} sx={{ mb: 3, textAlign: 'center', fontSize: { xs: '1.75rem', md: '2rem' }, letterSpacing: '0.3px' }}>
-            {t("servicesPage.sectionTitle")}
-          </Typography>
-
           <Box
             sx={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
+              gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)' },
               gap: 3,
             }}
           >
@@ -177,6 +266,11 @@ export default function Services() {
                     display: 'flex',
                     flexDirection: 'column',
                     borderRadius: 2,
+                    transition: 'transform 0.3s, box-shadow 0.3s',
+                    '&:hover': {
+                      transform: 'translateY(-4px)',
+                      boxShadow: '0 10px 25px rgba(0,0,0,0.1)',
+                    }
                   }}
                 >
                   <CardContent
@@ -202,14 +296,6 @@ export default function Services() {
                     >
                       {t(`servicesPage.cards.${svc.key}.desc`)}
                     </Typography>
-
-                  {/*  <Button
-                      size="small"
-                      variant="contained"
-                      sx={{ mt: 2, bgcolor: '#ff5600', '&:hover': { bgcolor: '#bf3a27' } }}
-                    >
-                      {t("servicesPage.cards.button")}
-                    </Button>*/}
                   </CardContent>
                 </Card>
               </Box>
@@ -219,76 +305,18 @@ export default function Services() {
       </Box>
 
       {/* CTA */}
-      <Box component="section" sx={{ mb: 10 ,py: { xs: 6, md: 8 }, position: 'relative', overflow: 'hidden',
-        background: `radial-gradient(900px 600px at 80% 0%, #1a0f07, rgba(26,15,7,0.4) 60%),
-                     linear-gradient(180deg, #0e0906 0%, #140c07 100%)` }}>
-        {/* Orange bubbles animation layer for CTA */}
-        <Box
-          sx={{
-            position: 'absolute',
-            inset: 0,
-            overflow: 'hidden',
-            pointerEvents: 'none',
-            '&::before, &::after': {
-              content: '""',
-              position: 'absolute',
-              borderRadius: '50%',
-              filter: 'blur(8px)',
-              background: 'radial-gradient(circle at 30% 30%, rgba(255, 140, 70, 0.55), rgba(255, 86, 0, 0) 60%)',
-              width: 260,
-              height: 260,
-              animation: 'floatY 9s ease-in-out infinite',
-              boxShadow: 'inset -18px -28px 56px rgba(0,0,0,0.25), 0 18px 36px rgba(0,0,0,0.3)'
-            },
-            '&::before': { top: -70, left: -60, animationDelay: '0s' },
-            '&::after': {
-              bottom: -90, right: -70,
-              background: 'radial-gradient(circle at 70% 70%, rgba(255, 160, 100, 0.5), rgba(255, 86, 0, 0) 60%)',
-              width: 320, height: 320, animationDelay: '3s'
-            },
-            '@keyframes floatY': {
-              '0%, 100%': { transform: 'translateY(0) scale(1)' },
-              '50%': { transform: 'translateY(-16px) scale(1.05)' }
-            }
-          }}
-        />
-        {/* Small depth bubbles */}
-        <Box sx={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
-          <Box sx={{ position: 'absolute', top: 40, left: 80, width: 100, height: 100, borderRadius: '50%',
-            background: 'radial-gradient( circle at 35% 35%, rgba(255, 150, 80, 0.55), rgba(255, 86, 0, 0) 65% )',
-            filter: 'blur(2px)', animation: 'floatX 12s ease-in-out infinite',
-            boxShadow: 'inset -8px -16px 32px rgba(0,0,0,0.25), 0 8px 16px rgba(0,0,0,0.25)'}} />
-          <Box sx={{ position: 'absolute', top: 120, left: 160, width: 70, height: 70, borderRadius: '50%',
-            background: 'radial-gradient( circle at 35% 35%, rgba(255, 170, 110, 0.5), rgba(255, 86, 0, 0) 65% )',
-            filter: 'blur(1px)', animation: 'floatX 14s ease-in-out -2s infinite',
-            boxShadow: 'inset -6px -12px 24px rgba(0,0,0,0.25), 0 6px 12px rgba(0,0,0,0.25)'}} />
-          <Box sx={{ position: 'absolute', bottom: 60, right: 80, width: 130, height: 130, borderRadius: '50%',
-            background: 'radial-gradient( circle at 35% 35%, rgba(255, 140, 70, 0.55), rgba(255, 86, 0, 0) 60% )',
-            filter: 'blur(2px)', animation: 'floatX 16s ease-in-out -4s infinite',
-            boxShadow: 'inset -10px -20px 40px rgba(0,0,0,0.25), 0 10px 20px rgba(0,0,0,0.25)'}} />
-          <Box sx={{
-            '@keyframes floatX': {
-              '0%, 100%': { transform: 'translateX(0) translateY(0)' },
-              '50%': { transform: 'translateX(16px) translateY(-10px)' }
-            }
-          }} />
-        </Box>
+      <Box component="section" sx={{ py: { xs: 6, md: 8 } }}>
         <Container maxWidth="lg">
           <Box
             sx={{
-              backgroundColor: 'rgba(255,255,255,0.08)',
-              backdropFilter: 'blur(10px)',
-              WebkitBackdropFilter: 'blur(10px)',
-              border: '1px solid rgba(255,255,255,0.22)',
-              boxShadow: '0 10px 30px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.20)',
+              bgcolor: '#e9e9e9',
               borderRadius: 2,
               px: { xs: 2, md: 6 },
               py: { xs: 4, md: 6 },
               textAlign: 'center',
-              color: 'common.white',
             }}
           >
-            <Typography variant="h4" fontWeight={900} sx={{ mb: 2, textAlign: 'center', letterSpacing: '0.3px', fontSize: { xs: '1.6rem', md: '1.9rem', ...titleOrangeGradientStyle } }}>
+            <Typography variant="h5" fontWeight={800} sx={{ mb: 2 }}>
               {t("servicesPage.cta.title")}
             </Typography>
             <Typography variant="h6" sx={{ maxWidth: 900, mx: 'auto', mb: 3 }}>
@@ -308,36 +336,36 @@ export default function Services() {
         </Container>
       </Box>
 
-      {/* FAQs - All questions in accordions */}
+      {/* FAQs */}
       <Box component="section" sx={{ pb: { xs: 6, md: 10 } }}>
         <Container maxWidth="lg">
-          <Box sx={{ mb: 3, textAlign: 'center' }}>
-            <Typography variant="h4" fontWeight={900} sx={{ color: "#ff5600",mb: 0.5, letterSpacing: '0.3px', fontSize: { xs: '1.6rem', md: '1.9rem' } }}>
+          <Accordion defaultExpanded>
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+              <Typography variant="h6" fontWeight={800}>
                 {t("servicesPage.faqs.title")}
               </Typography>
-            <Typography variant="caption" fontWeight={600} color="text.secondary">
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography variant="caption" color="text.secondary">
                 {t("servicesPage.faqs.subtitle")}
               </Typography>
-          </Box>
+            </AccordionDetails>
+          </Accordion>
 
-          <Box>
-            {(Array.isArray(faqs) ? faqs : []).map((item, idx) => (
-              <Accordion key={idx} disableGutters sx={{ mb: 1.5, backgroundColor: 'transparent', border: '1px solid', borderColor: 'divider', borderRadius: 2 }}>
+          {faqs.map((item, idx) => (
+            <Accordion key={idx} disableGutters>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                  <Typography variant="subtitle1" fontWeight={800}>
-                    {idx + 1}. {item.q}
-                  </Typography>
+                <Typography variant="body2">{idx + 1}. {item.q}</Typography>
               </AccordionSummary>
               <AccordionDetails>
                 <Typography variant="body2" color="text.secondary">{item.a}</Typography>
               </AccordionDetails>
             </Accordion>
           ))}
-          </Box>
         </Container>
       </Box>
     </>
-  )
+  );
 }
 
 function IconBadge({ children }) {
@@ -356,5 +384,5 @@ function IconBadge({ children }) {
     >
       {children}
     </Box>
-  )
+  );
 }
