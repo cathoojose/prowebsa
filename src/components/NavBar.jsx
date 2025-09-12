@@ -37,11 +37,11 @@ export default function Navbar(props) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [languageAnchor, setLanguageAnchor] = useState(null);
   const [scrollUp, setScrollUp] = useState(false);
-  const [atTop, setAtTop] = useState(true); // nouveau état pour détecter si on est en haut
+  const [atTop, setAtTop] = useState(true);
   const location = useLocation();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   // Détecter la direction du scroll et si on est en haut
   useEffect(() => {
@@ -53,7 +53,7 @@ export default function Navbar(props) {
         setScrollUp(false);
       } else {
         setAtTop(false);
-        setScrollUp(window.scrollY < lastScrollY); // true si scroll vers le haut
+        setScrollUp(window.scrollY < lastScrollY);
       }
       lastScrollY = window.scrollY;
     };
@@ -70,26 +70,28 @@ export default function Navbar(props) {
   const handleLanguageClose = () => setLanguageAnchor(null);
   const changeLanguage = (lng) => { i18n.changeLanguage(lng); handleLanguageClose(); };
 
+  // Menu depuis le JSON
   const navItems = [
-    { text: 'Services', path: '/services' },
-    { text: 'À propos', path: '/about' },
-    { text: 'Portfolio', path: '/portfolio' },
-    { text: 'Contact', path: '/contact' },
+    { text: t('navbar.services'), path: '/services' },
+    { text: t('navbar.about'), path: '/about' },
+    { text: t('navbar.portfolio'), path: '/portfolio' },
+    { text: t('navbar.contact'), path: '/contact' },
   ];
 
   // Déterminer la couleur du texte
   const getTextColor = () => {
-    if (isPortfolioPage()) return 'black'; // Portfolio toujours noir
-    if (scrollUp) return 'black';          // Scroll up → noir
-    if (atTop && hasBanner()) return 'white'; // En haut et page avec bannière → blanc
-    if (hasBanner()) return 'white';       // par défaut pages avec bannière
-    return 'black';                        // autres pages
+    if (isMobile) return 'black';          // Mobile & tablette → toujours noir
+    if (isPortfolioPage()) return 'black';
+    if (scrollUp) return 'black';
+    if (atTop && hasBanner()) return 'white';
+    if (hasBanner()) return 'white';
+    return 'black';
   };
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <RouterLink to="/">
-        <Box component="img" src={logo} alt="Logo" sx={{ height: 50, my: 2 }} />
+        <Box component="img" src={logo} alt="Logo" sx={{ height: 60, my: 3 }} />
       </RouterLink>
       <List>
         {navItems.map((item) => (
@@ -98,7 +100,7 @@ export default function Navbar(props) {
             component={RouterLink} 
             to={item.path}
             sx={{ 
-              color: getTextColor(),
+              color: 'black', // Mobile → toujours noir
               justifyContent: 'center',
               '&:hover': { backgroundColor: 'rgba(255, 165, 0, 0.2)' }
             }}
@@ -107,15 +109,20 @@ export default function Navbar(props) {
           </ListItem>
         ))}
 
-        <ListItem 
-          onClick={handleLanguageMenu}
-          sx={{ color: getTextColor(), justifyContent: 'center', cursor: 'pointer' }}
+        {/* Correction : langue dans le Drawer (mobile) */}
+        <ListItem
+          sx={{ color: 'black', justifyContent: 'center', cursor: 'pointer' }}
         >
+          <TranslateIcon sx={{ mr: 0.5 }} />
           <ListItemText 
             primary={i18n.language === 'fr' ? 'Français' : 'English'} 
             sx={{ textAlign: 'center' }}
           />
         </ListItem>
+        <Box>
+          <MenuItem onClick={() => changeLanguage('fr')} selected={i18n.language === 'fr'}>Français</MenuItem>
+          <MenuItem onClick={() => changeLanguage('en')} selected={i18n.language === 'en'}>English</MenuItem>
+        </Box>
       </List>
     </Box>
   );
@@ -172,7 +179,7 @@ export default function Navbar(props) {
               aria-label="open drawer"
               edge="start"
               onClick={handleDrawerToggle}
-              sx={{ ml: 'auto', display: { md: 'none' }, color: getTextColor() }}
+              sx={{ ml: 'auto', display: { md: 'none' }, color: 'black' }} // Mobile → noir
             >
               <MenuIcon />
             </IconButton>
@@ -180,10 +187,12 @@ export default function Navbar(props) {
         </AppBar>
       </HideOnScroll>
 
+      {/* Menu desktop uniquement */}
       <Menu
         anchorEl={languageAnchor}
         open={Boolean(languageAnchor)}
         onClose={handleLanguageClose}
+        sx={{ display: { xs: 'none', md: 'block' } }}
       >
         <MenuItem onClick={() => changeLanguage('fr')} selected={i18n.language === 'fr'}>Français</MenuItem>
         <MenuItem onClick={() => changeLanguage('en')} selected={i18n.language === 'en'}>English</MenuItem>

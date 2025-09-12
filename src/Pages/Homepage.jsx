@@ -302,6 +302,8 @@ export default function Homepage() {
               px: { xs: 2, md: 4 },
               py: { xs: 3, md: 4 },
               borderRadius: 3,
+              pt: { xs: 12, md: 16 } // ✅ ajoute du padding top pour mobile/tablette
+
             }}
           >
             <Stack spacing={2}>
@@ -336,24 +338,45 @@ export default function Homepage() {
             {t("homepage.services.title")}
           </Typography>
 
-          <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 3, alignItems: 'stretch' }}>
-            {services.map((svc) => (
-              <Box key={svc.title} sx={{ minWidth: 0 }}>
-                <Card variant="outlined" sx={{ height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'left', py: 3 }}>
-                  <Box sx={{ mb: 2 }}>
-                    {React.cloneElement(svc.icon, { sx: { fontSize: 50, color: '#ff5600' } })}
-                  </Box>
-                  <Typography variant="h6" fontWeight={800} sx={{ mb: 1.5 }}>
-                    {svc.title}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary"
-                    sx={{ textAlign: 'justify', textJustify: 'inter-word', hyphens: 'auto', px: 2 }}>
-                    {svc.desc}
-                  </Typography>
-                </Card>
-              </Box>
-            ))}
-          </Box>
+         <Box 
+  sx={{ 
+    display: 'grid',
+    gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: 'repeat(3, 1fr)' }, 
+    gap: 3, 
+    alignItems: 'stretch' 
+  }}
+>
+  {services.map((svc) => (
+    <Box key={svc.title} sx={{ minWidth: 0 }}>
+      <Card 
+        variant="outlined" 
+        sx={{ 
+          height: '100%', 
+          display: 'flex', 
+          flexDirection: 'column', 
+          alignItems: 'center', 
+          textAlign: 'left', 
+          py: 3 
+        }}
+      >
+        <Box sx={{ mb: 2 }}>
+          {React.cloneElement(svc.icon, { sx: { fontSize: 50, color: '#ff5600' } })}
+        </Box>
+        <Typography variant="h6" fontWeight={800} sx={{ mb: 1.5, textAlign: 'center' }}>
+          {svc.title}
+        </Typography>
+        <Typography 
+          variant="body2" 
+          color="text.secondary"
+          sx={{ textAlign: 'justify', textJustify: 'inter-word', hyphens: 'auto', px: 2 }}
+        >
+          {svc.desc}
+        </Typography>
+      </Card>
+    </Box>
+  ))}
+</Box>
+
 
           <Box sx={{ textAlign: 'center', mt: 4 }}>
             <Button component={RouterLink} to="/services" variant="contained" size="large"

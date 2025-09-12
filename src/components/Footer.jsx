@@ -33,7 +33,7 @@ export default function Footer() {
             <FooterLink to="/customer-success">{t("footer.customer_success")}</FooterLink>
          {/*   <FooterLink to="/stories">{t("footer.stories")}</FooterLink>*/}
             <FooterLink to="/quality-guide">{t("footer.quality_guide")}</FooterLink>
-            <FooterLink to="/careers">{t("footer.careers")}</FooterLink>
+            {/* <FooterLink to="/careers">{t("footer.careers")}</FooterLink> */}
           </Grid>
 
           {/* Quick Links */}

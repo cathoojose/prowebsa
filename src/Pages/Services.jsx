@@ -127,14 +127,18 @@ export default function Services() {
 
   const faqs = t("servicesPage.faqs.items", { returnObjects: true });
 
-  const nodes = [
-    { className: 'cloud', top: '10%', left: '20%', icon: '☁️', text: t("servicesPage.nodes.cloud") },
-    { className: 'email', bottom: '10%', left: '20%', icon: '✉️', text: t("servicesPage.nodes.email") },
-    { className: 'server', bottom: '10%', right: '20%', icon: '🖥️', text: t("servicesPage.nodes.server") },
-    { className: 'database', top: '10%', right: '20%', icon: '💾', text: t("servicesPage.nodes.database") },
-    { className: 'monitor', top: '50%', left: '5%', icon: '💻', text: t("servicesPage.nodes.monitor") },
-    { className: 'tablet', top: '50%', right: '5%', icon: '📱', text: t("servicesPage.nodes.tablet") }
-  ];
+ const radius = { xs: 120, sm: 180, md: 250 }; // distance hub → nodes
+
+const nodes = [
+  { icon: "☁️", text: t("servicesPage.nodes.cloud") },
+  { icon: "💾", text: t("servicesPage.nodes.database") },
+  { icon: "🖥️", text: t("servicesPage.nodes.server") },
+  { icon: "✉️", text: t("servicesPage.nodes.email") },
+  { icon: "💻", text: t("servicesPage.nodes.monitor") },
+  { icon: "📱", text: t("servicesPage.nodes.tablet") }
+];
+
+
 
   return (
     <>
@@ -205,45 +209,54 @@ export default function Services() {
           </Box>
 
           {/* Les nœuds */}
-          {nodes.map((node, index) => (
-            <Box
-              key={index}
-              sx={{
-                position: 'absolute',
-                width: '110px',
-                height: '110px',
-                borderRadius: '50%',
-                border: '2px solid #38bdf8',
-                display: { xs: 'none', md: 'flex' },
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-                color: 'white',
-                fontSize: '14px',
-                fontWeight: 'bold',
-                textAlign: 'center',
-                boxShadow: '0 0 20px rgba(56,189,248,0.7)',
-                transition: 'transform 0.3s, box-shadow 0.3s',
-                background: 'rgba(255, 255, 255, 0.05)',
-                backdropFilter: 'blur(5px)',
-                zIndex: 2,
-                [node.top ? 'top' : 'bottom']: node.top || node.bottom,
-                [node.left ? 'left' : 'right']: node.left || node.right,
-                transform: node.className.includes('monitor') || node.className.includes('tablet') 
-                  ? 'translateY(-50%)' 
-                  : 'none',
-                '&:hover': {
-                  transform: (node.className.includes('monitor') || node.className.includes('tablet') 
-                    ? 'translateY(-50%) scale(1.2)' 
-                    : 'scale(1.2)'),
-                  boxShadow: '0 0 35px rgba(56,189,248,1)'
-                }
-              }}
-            >
-              <Box sx={{ fontSize: '28px', marginBottom: '6px' }}>{node.icon}</Box>
-              {node.text}
-            </Box>
-          ))}
+      {nodes.map((node, index) => {
+  const angle = (index / nodes.length) * 2 * Math.PI; // répartis en cercle
+  return (
+    <Box
+      key={index}
+      sx={{
+        position: "absolute",
+        top: {
+          xs: `calc(50% + ${radius.xs * Math.sin(angle)}px)`,
+          sm: `calc(50% + ${radius.sm * Math.sin(angle)}px)`,
+          md: `calc(50% + ${radius.md * Math.sin(angle)}px)`
+        },
+        left: {
+          xs: `calc(50% + ${radius.xs * Math.cos(angle)}px)`,
+          sm: `calc(50% + ${radius.sm * Math.cos(angle)}px)`,
+          md: `calc(50% + ${radius.md * Math.cos(angle)}px)`
+        },
+        transform: "translate(-50%, -50%)",
+        width: { xs: "70px", sm: "90px", md: "110px" },
+        height: { xs: "70px", sm: "90px", md: "110px" },
+        borderRadius: "50%",
+        border: "2px solid #38bdf8",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        color: "white",
+        fontSize: { xs: "11px", sm: "13px", md: "14px" },
+        fontWeight: "bold",
+        textAlign: "center",
+        boxShadow: "0 0 20px rgba(56,189,248,0.7)",
+        background: "rgba(255,255,255,0.05)",
+        backdropFilter: "blur(5px)",
+        "&:hover": {
+          transform: "translate(-50%, -50%) scale(1.15)",
+          boxShadow: "0 0 35px rgba(56,189,248,1)"
+        }
+      }}
+    >
+      <Box sx={{ fontSize: { xs: "18px", sm: "22px", md: "28px" }, mb: "4px" }}>
+        {node.icon}
+      </Box>
+      {node.text}
+    </Box>
+  );
+})}
+
+
         </Box>
       </Box>
 

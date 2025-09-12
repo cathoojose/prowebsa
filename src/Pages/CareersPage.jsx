@@ -42,11 +42,11 @@ function CareersPage() {
           ))}
         </Grid>
 
-        <Typography variant="h6" gutterBottom sx={{ mt: 4, fontWeight: 600 }}>
+        {/* <Typography variant="h6" gutterBottom sx={{ mt: 4, fontWeight: 600 }}>
           {t('careers.current_openings')}
-        </Typography>
+        </Typography> */}
 
-        <Grid container spacing={2} sx={{ mt: 1 }}>
+        {/* <Grid container spacing={2} sx={{ mt: 1 }}>
           {['frontend','fullstack','ux_ui','devops'].map((job) => (
             <Grid item xs={12} md={6} key={job}>
               <Card>
@@ -58,16 +58,16 @@ function CareersPage() {
               </Card>
             </Grid>
           ))}
-        </Grid>
+        </Grid> */}
 
-        <Box sx={{ mt: 4, pt: 3, borderTop: '1px solid #e0e0e0', textAlign: 'center' }}>
+        {/* <Box sx={{ mt: 4, pt: 3, borderTop: '1px solid #e0e0e0', textAlign: 'center' }}>
           <Typography variant="body2" color="text.secondary" paragraph>
             {t('careers.general_application.text')}
           </Typography>
           <Button variant="contained" component={RouterLink} to="/contact">
             {t('careers.general_application.button')}
           </Button>
-        </Box>
+        </Box> */}
       </Paper>
     </Container>
   );
